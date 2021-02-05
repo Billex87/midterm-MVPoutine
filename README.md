@@ -1,5 +1,3 @@
-LHL Node Skeleton
-=========
 
 ## Project Setup
 
@@ -41,3 +39,10 @@ The following steps are only for _one_ of the group members to perform.
 - Node 10.x or above
 - NPM 5.x or above
 - PG 6.x
+=======
+# midterm-resource-wall
+Midterm With @idil and @sam_anderson Displaying our amazing new dev skills
+Change.
+
+I am taking over this read me.
+Hello 
