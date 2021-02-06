@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS foods CASCADE;
-CREATE TABLE foods (
+DROP TABLE IF EXISTS menu CASCADE;
+CREATE TABLE menu (
   id SERIAL PRIMARY KEY NOT NULL,
   name varchar(255),
   description text,
