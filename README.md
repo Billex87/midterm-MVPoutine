@@ -40,8 +40,8 @@ The following steps are only for _one_ of the group members to perform.
 - NPM 5.x or above
 - PG 6.x
 =======
-# midterm-resource-wall
-Midterm With @idil and @sam_anderson Displaying our amazing new dev skills
+# midterm-food
+Midterm With @billex87, @idiljei and @samjanderson Displaying our amazing new dev skills
 Change.
 
 I am taking over this read me.
