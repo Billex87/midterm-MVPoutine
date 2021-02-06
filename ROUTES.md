@@ -10,9 +10,9 @@ A
 D
 ** no post to edit/create or delete users
 
-## Food
+## Menu
 Browse GET/menu
-Read GET/menu/:foods_id
+Read GET/menu/:menu_id
 E 
 A
 D
@@ -20,16 +20,16 @@ D
 ## Orders
 Browse GET/orders
 Read   GET/orders/:orders_id
-Edit   POST/orders/:orders_id
-Add    POST/orders
+Edit   POST/orders/:orders_id (2) (edit your cart)
+Add    POST/orders (1) (submit order)
 D
 *calculate total price through query not through making a total price column
 
-## Order-details
-Browse GET/order-details
-Read   GET/order-details/:order-details_id
+## Order-items
+Browse GET/order-items 
+Read   
 E
-Add    POST/order-details
+Add   POST/order-details (add order items to your order) (the first post creates the order) check if order already created or not
 D
 
 ## Extra information regarding routes
