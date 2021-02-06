@@ -1,21 +1,21 @@
-/*
- * All routes for Widgets are defined here
- * Since this file is loaded in server.js into api/widgets,
- *   these routes are mounted onto /widgets
- * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
- */
+/**
+ * The following route gets all values from the orders table given a user ID in POSTGRES-SQL and returns them as a
+ * JSON when the user navigates to /api/order.
+**/
 
 const express = require('express');
 const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    let query = `SELECT * FROM widgets`;
-    console.log(query);
-    db.query(query)
+    const ownerId = req.session.userID
+    // console.log(ownerId)
+    db.query(`SELECT * FROM orders WHERE owner_id = '${ownerId}';`)
       .then(data => {
-        const widgets = data.rows;
-        res.json({ widgets });
+        // console.log(data)
+        const orders = data.rows;
+        res.json({ orders });
+        // console.log(orders)
       })
       .catch(err => {
         res
