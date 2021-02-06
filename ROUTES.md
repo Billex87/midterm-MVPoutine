@@ -18,18 +18,30 @@ A
 D
 
 ## Orders
-Browse GET/orders
+Browse GET/orders 
 Read   GET/orders/:orders_id
 Edit   POST/orders/:orders_id (2) (edit your cart)
 Add    POST/orders (1) (submit order)
 D
 *calculate total price through query not through making a total price column
 
-## Order-items
-Browse GET/order-items 
+
+CREATE TABLE orders (
+  id INT UNIQUE NOT NULL DEFAULT NEXTVAL('orders_id_seq'),
+  created_at TIMESTAMP DEFAULT NOW(),
+  order_status VARCHAR(255) DEFAULT 'Pending',
+  total_price int,
+  duration int,
+  user_id int REFERENCES users (id) ON DELETE CASCADE
+);
+
+
+## Order-items (cart)
+(them adding stuff to the cart)
+Browse GET/order-items (show cart)
 Read   
 E
-Add   POST/order-details (add order items to your order) (the first post creates the order) check if order already created or not
+Add  POST/order-details (add order items to your order) (the first post creates the order) check if order already created or not
 D
 
 ## Extra information regarding routes
