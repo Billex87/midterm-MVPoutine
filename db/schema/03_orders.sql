@@ -1,11 +1,14 @@
 DROP TABLE IF EXISTS orders CASCADE;
-CREATE SEQUENCE IF NOT EXISTS orders_id_seq;
 
 CREATE TABLE orders (
-  id INT UNIQUE NOT NULL DEFAULT NEXTVAL('orders_id_seq'),
-  created_at TIMESTAMP DEFAULT NOW(),
-  order_status VARCHAR(255) DEFAULT 'Pending',
-  total_price int,
-  duration int,
-  user_id int REFERENCES users (id) ON DELETE CASCADE
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  menu_id INTEGER REFERENCES menu(id) ON DELETE CASCADE,
+  order_status BOOLEAN DEFAULT FALSE,
+  order_begin TIME DEFAULT CURRENT_TIME(2),
+  order_end TIMESTAMP,
+  owner_id VARCHAR(225),
+  item_name VARCHAR(255),
+  item_price INTEGER,
+  item_quantity INTEGER
 );
