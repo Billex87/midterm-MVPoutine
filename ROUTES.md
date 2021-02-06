@@ -4,32 +4,32 @@ All steps that are not filled out will be considered stretch and only tackled if
 
 ## Users
 B
-Read
+Read GET/login/:user_id
 E
 A
 D
 ** no post to edit/create or delete users
 
 ## Food
-Browse
-Read
-E
+Browse GET/menu
+Read GET/menu/:foods_id
+E 
 A
 D
 
 ## Orders
-Browse
-Read
-Edit
-Add
+Browse GET/orders
+Read   GET/orders/:orders_id
+Edit   POST/orders/:orders_id
+Add    POST/orders
 D
 *calculate total price through query not through making a total price column
 
 ## Order-details
-Browse
-Read
+Browse GET/order-details
+Read   GET/order-details/:order-details_id
 E
-Add
+Add    POST/order-details
 D
 
 ## Extra information regarding routes
