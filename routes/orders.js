@@ -8,9 +8,10 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    const ownerId = req.session.userID
+    // const ownerId = req.session.userID
+    const ownerID = 1
     // console.log(ownerId)
-    db.query(`SELECT * FROM orders WHERE owner_id = '${ownerId}';`)
+    db.query(`SELECT * FROM orders WHERE owner_id = '${ownerID}';`)
       .then(data => {
         // console.log(data)
         const orders = data.rows;
