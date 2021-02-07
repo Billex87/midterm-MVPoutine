@@ -12,5 +12,3 @@ CREATE TABLE orders (
 
 
 
-INSERT INTO orders (user_id, order_status, order_end, owner_id, total_price)
-VALUES (1, complete, FALSE)
