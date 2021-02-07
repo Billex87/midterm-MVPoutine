@@ -24,9 +24,10 @@ body {
 
 }
 .col-2 {
-  display: flex;
-  flex-direction: column;
-  flex: 5;
+  // display: flex;
+  // flex-direction: column;
+  // flex: 5;
+
   border: solid red;
 }
 .content {
@@ -34,20 +35,16 @@ body {
   flex-direction: row;
   border: solid purple;
 }
-.content > article {
-  flex: 3;
-  min-height: 60vh;
 
-}
 
-header, footer {
-  background: rgb(170, 167, 167);
-  height: 20vh;
-  font: white;
-}
-header, footer, article, nav, aside {
-  padding: 1em;
-}
+// header, footer {
+//   background: rgb(170, 167, 167);
+//   height: 20vh;
+//   font: white;
+// }
+// header, footer, article, nav, aside {
+//   padding: 1em;
+// }
 
 //  MOVE THIS TO A NEW PAGE -- NAV BAR STYLING
 
