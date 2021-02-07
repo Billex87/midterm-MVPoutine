@@ -1,7 +1,7 @@
 INSERT INTO menu (name, description, price, imgURL)
 VALUES
-('Traditional', 'Fresh hand-cut french fries, signature gravy, cheese curd. 1190 CAL', 1099, '/public/images/Traditional.png'),
-('Perogy', 'Fried perogies, double-smoked bacon, sour cream. 1450 CAL', 1299, 'public/images/Perogy-Poutine.png'),
+('Traditional', 'Fresh hand-cut french fries, signature gravy, cheese curd. 1190 CAL', 1099, 'images/Traditional.png'),
+('Perogy', 'Fried perogies, double-smoked bacon, sour cream. 1450 CAL', 1299, 'images/Perogy-Poutine.png'),
 ('PopCorn Chicken', 'Fresh hand cut fries, cheese curd, signature gravy, popcorn chicken. 1230 CAL', 1299, 'public/images/popcorn-chicken.png'),
 ('Butter Chicken', 'Grilled chicken, butter chicken sauce, green onions. 1350 CAL', 1299, 'public/images/ButterChicken.png'),
 ('Avalanche', 'Fresh hand-cut french fries, signature gravy, cheese curds, chipotle pulled pork, grilled chicken, double-smoked bacon, and ranch. 1650 CAL', 1599, 'public/images/Avalanche_Poutine-thumb.png'),
