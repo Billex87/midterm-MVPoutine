@@ -6,6 +6,7 @@ const PORT       = process.env.PORT || 8080;
 const ENV        = process.env.ENV || "development";
 const express    = require("express");
 const bodyParser = require("body-parser");
+const cookieSession = require('cookie-session');
 const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan     = require('morgan');
@@ -44,6 +45,12 @@ app.use("/api/menu", menuRoutes(db));
 app.use("/api/orders", ordersRoutes(db));
 
 // Note: mount other resources here, using the same pattern above
+
+// COOKIE SESSION \\
+app.use(cookieSession({
+  name: 'session',
+  keys: ['123']
+}));
 
 
 // Home page
