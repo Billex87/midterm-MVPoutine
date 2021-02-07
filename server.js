@@ -70,7 +70,7 @@ app.get("/", (req, res) => {
 
 //   })
 
-  app.post("/login/:user_id", (req, res) => {
+  app.get("/login/:user_id", (req, res) => {
     console.log("working")
     const userID = req.params.user_id
     console.log('userID', userID)
