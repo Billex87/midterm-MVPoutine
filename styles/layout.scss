@@ -18,7 +18,7 @@ body {
   margin: 0;
 }
 .col-1 {
-  background: #17ce17;
+  background: #021302;
   flex: 1;
   border: solid rgb(217, 255, 0);
 
@@ -51,6 +51,11 @@ header, footer, article, nav, aside {
 
 //  MOVE THIS TO A NEW PAGE -- NAV BAR STYLING
 
+.nav-container{
+  background-color: #1e1c1c;
+
+}
+
 .logo{
   height: 12em;
   width: 15em;
@@ -64,11 +69,11 @@ nav ul {
 }
 
 nav ul li {
-  --c: goldenrod;
+  --c: #f1eae0;
   color: var(--c);
   font-size: 16px;
-  border: 0.3em solid var(--c);
-  border-radius: 0.5em;
+  // border: 0.3em solid var(--c);
+  // border-radius: 0.5em;
   width: 12em;
   height: 3em;
   text-transform: uppercase;
