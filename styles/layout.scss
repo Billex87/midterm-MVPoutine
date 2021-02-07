@@ -9,6 +9,7 @@
 // }
 
 @import 'nav';
+@import 'menu';
 
   :root {
     --navbar-width: 15rem;
@@ -32,12 +33,7 @@ body {
   // background-color: #1e1c1c ;
 }
 
-#menu{
-  background: rgb(170, 167, 167);
-  height: 80vh;
-  font: white;
 
- }
 
 
 
