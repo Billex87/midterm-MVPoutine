@@ -1,0 +1,42 @@
+// Menu styling
+
+
+.menu{
+  display: flex;
+  flex-direction: row;
+  background: rgb(170, 167, 167);
+  height: 120vh;
+  font: white;
+  background-color: red;
+
+ }
+
+#leftmenu-box{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  border: solid blue;
+
+}
+
+#rightmenu-box {
+display: flex;
+ flex-direction: column;
+ flex-grow: 1;
+border: solid black;
+}
+
+
+.menu-box{
+display: flex;
+flex-direction: 🗞 ;
+border: solid black;
+flex-grow: 1;
+padding: 1em;
+
+}
+
+.menu-item{
+ border: solid green;
+ justify-content: space-between;
+}
