@@ -2,14 +2,14 @@
 require('dotenv').config();
 
 // Web server config
-const PORT       = process.env.PORT || 8080;
-const ENV        = process.env.ENV || "development";
-const express    = require("express");
+const PORT = process.env.PORT || 8080;
+const ENV = process.env.ENV || "development";
+const express = require("express");
 const bodyParser = require("body-parser");
 const cookieSession = require('cookie-session');
-const sass       = require("node-sass-middleware");
-const app        = express();
-const morgan     = require('morgan');
+const sass = require("node-sass-middleware");
+const app = express();
+const morgan = require('morgan');
 
 // PG database client/connection setup
 const { Pool } = require('pg');
@@ -59,6 +59,31 @@ app.use(cookieSession({
 app.get("/", (req, res) => {
   res.render("index");
 });
+
+// app.get("/login/:user_id", (req, res) => {
+//   const userID = req.params.user_id;
+//   // we have user's id, so all we have to do is set the cookie with it
+//   req.session.user_id = userID;
+//   // or, in one line:
+//   req.session.user_id = req.params.user_id;
+//   // then redirect the user somewhere
+//   res.redirect('/');
+// });
+
+app.get("/login/:user_id", (req, res) => {
+  const userID = req.params.user_id;
+  // we have user's id, so all we have to do is set the cookie with it
+  req.session.user_id = userID;
+  res.redirect('/');
+});
+
+app.get("/logout", (request, res) => {
+  request.session = null;
+  res.redirect("/");
+});
+
+// So you can make a GET request to http://localhost:8080/login/2 and you'd get a cookie with that user id
+
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
