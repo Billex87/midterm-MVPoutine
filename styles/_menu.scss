@@ -14,17 +14,15 @@
 #leftmenu-box{
   display: flex;
   flex-direction: column;
-  flex-grow: 0;
-  flex-shrink: 0;
+  width: 50%;
   border: solid blue;
 
 }
 
 #rightmenu-box {
 display: flex;
- flex-direction: column;
- flex-grow: 0;
- flex-shrink: 0;
+flex-direction: column;
+ width: 50%;
 border: solid black;
 }
 
@@ -33,9 +31,9 @@ border: solid black;
 display: flex;
 flex-direction: row ;
 border: solid black;
-flex-grow: 0;
 padding: 1em;
 justify-content: space-between;
+height: 200px;
 
 }
 
@@ -44,6 +42,19 @@ justify-content: space-between;
 }
 
 .menu-left, .menu-right {
+  display: flex;
+  flex-direction: column;
   background-color: firebrick;
-
+  justify-content: space-between;
+  overflow-y: scroll;
 }
+
+.menu-right{
+  flex-shrink: 0;
+}
+
+.menu-itemimage{
+  width: 120x;
+  height: 100px;
+}
+
