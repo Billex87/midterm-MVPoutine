@@ -14,7 +14,8 @@
 #leftmenu-box{
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  flex-grow: 0;
+  flex-shrink: 0;
   border: solid blue;
 
 }
@@ -22,21 +23,27 @@
 #rightmenu-box {
 display: flex;
  flex-direction: column;
- flex-grow: 1;
+ flex-grow: 0;
+ flex-shrink: 0;
 border: solid black;
 }
 
 
 .menu-box{
 display: flex;
-flex-direction: 🗞 ;
+flex-direction: row ;
 border: solid black;
-flex-grow: 1;
+flex-grow: 0;
 padding: 1em;
+justify-content: space-between;
 
 }
 
 .menu-item{
  border: solid green;
- justify-content: space-between;
+}
+
+.menu-left, .menu-right {
+  background-color: firebrick;
+
 }

@@ -11,10 +11,12 @@
 @import 'nav';
 @import 'menu';
 
-  :root {
-    --navbar-width: 15rem;
-
+  :root, p {
+  --navbar-width: 15rem;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
   }
 
 body {
