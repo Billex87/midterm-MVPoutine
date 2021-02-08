@@ -15,13 +15,38 @@
 
     <%- include('partials/_navbar') %>
 
+
+
+    <%for(let item of orders){%>
     <section class="order">
-      <!-- LEFT SIDE OF MENU CONTAINER  -->
+      <!-- PAGE TEMPLATE  -->
+      <section>
+        <div class= "order-status " >
+           <p> <%=item.order_status%> </p>
+        </div>
+      </section>
+
+      <section>
+        <div class= "order-status " >
+           <p> <%=item.order_begin%>  </p>
+        </div>
+      </section>
+
+      <section>
+        <div class= "order-status " >
+           <p> Your order will be complete in
+                30 minutes or less. If we lie we buy! </p>
+        </div>
+      </section>
 
 
-  </section>
-</main>
-
+      <section>
+        <div class= "order-price " >
+           <p> $ <%=item.total_price/100%>
+           </p>
+        </div>
+        <%}%>
+      </section>
 
 
   </body>
