@@ -15,7 +15,8 @@ module.exports = (db) => {
       .then(data => {
         // console.log(data)
         const orders = data.rows;
-        res.json({ orders });
+        // res.json({ orders });  // this line will crash the page- lets delete it
+        res.render('orders', {orders}); //added by idil to make orders page
         // console.log(orders)
       })
       .catch(err => {
