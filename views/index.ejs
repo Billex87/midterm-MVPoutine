@@ -12,6 +12,38 @@
   </head>
 
   <body>
+<<<<<<< HEAD
+=======
+  <!-- Navigation Bar  -->
+    <nav class="nav-container">
+      <div class = "logo">
+        <img src="/images/Orange Minimalist Food Festival Logo.png" alt="logo-image" width= "100%">
+      </div>
+      <ul>
+        <li>
+          HOME
+          <span></span><span></span><span></span><span></span>
+        </li>
+        <li>
+          MENU
+          <span></span><span></span><span></span><span></span>
+        </li>
+        <li>
+          ORDER ONLINE
+          <span></span><span></span><span></span><span></span>
+        </li>
+        <li>
+          CART
+          <span></span><span></span><span></span><span></span>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- dummy container -->
+    <nav class="nav-dummy">
+      you can't see me
+    </nav>
+>>>>>>> bill-branch
 
       <!-- Navigation Bar  -->
     <%- include('partials/_navbar') %>
@@ -35,15 +67,13 @@
                 <div class= "menu-item menu-left" >
                    <p><%=item.name%></p>
                    <p><%=item.description%></p>
-                   <div>
-                    $<%=item.price /100%>
+                   <div class="foot">
+                    <p> $<%=item.price /100%> </p>
+                    <button class="order-button">Order</button>
                    </div>
                   </div>
                 <div class= "menu-item menu-right" >
                   <img class= "menu-itemimage" src="<%= item.imgurl %>" alt= "">
-                 <div>
-                   <button id="order-button" class="order-button">Order</button>
-                  </div>
                 </div>
               </div>
               <%}%>
