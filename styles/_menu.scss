@@ -1,34 +1,44 @@
 // Menu styling
 .menu{
   display: flex;
-  flex-direction: row;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  flex-direction: column;
+  font-size: 18px;
   background: rgb(170, 167, 167);
   // height: 140vh;
   font: white;
-  background-color: red;
+  background-color: black;
 }
 .menu-box{
 display: flex;
-flex-direction: column;
-border: solid black;
-padding: 1em;
-justify-content: space-between;
+flex-direction: row;
+border: solid yellow;
+// padding: 1em;
+justify-content: space-around;
 height: 200px;
 }
-.menu-item{
+.menu-left{
  display: flex;
- flex-direction: row;
-  border: solid green;
+ align-items: center;
+ flex: 3;
+ margin: 20px;
+ flex-direction: column;
+ justify-content: space-between;
+  border: solid red;
 }
 .menu-right {
-  width: 30%;
+  margin: auto;
+  align-items: center;
+  flex: 1;
   flex-direction: column;
-  background-color: firebrick;
   justify-content: space-between;
-  overflow-y: scroll;
+  // overflow-y: scroll;
 }
 .menu-itemimage{
   width: 120x;
   height: 100px;
+}
+.order-button{
+  margin: 20px;
 }
 
