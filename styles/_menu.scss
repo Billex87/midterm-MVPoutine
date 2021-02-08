@@ -1,58 +1,32 @@
 // Menu styling
-
-
 .menu{
   display: flex;
   flex-direction: row;
   background: rgb(170, 167, 167);
-  height: 140vh;
+  // height: 140vh;
   font: white;
   background-color: red;
-
- }
-
-#leftmenu-box{
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  border: solid blue;
-
 }
-
-#rightmenu-box {
-display: flex;
-flex-direction: column;
- width: 50%;
-border: solid black;
-}
-
-
 .menu-box{
 display: flex;
-flex-direction: row ;
+flex-direction: column;
 border: solid black;
 padding: 1em;
 justify-content: space-between;
 height: 200px;
-
 }
-
 .menu-item{
- border: solid green;
+ display: flex;
+ flex-direction: row;
+  border: solid green;
 }
-
-.menu-left, .menu-right {
-  display: flex;
+.menu-right {
+  width: 30%;
   flex-direction: column;
   background-color: firebrick;
   justify-content: space-between;
   overflow-y: scroll;
 }
-
-.menu-right{
-  flex-shrink: 0;
-}
-
 .menu-itemimage{
   width: 120x;
   height: 100px;

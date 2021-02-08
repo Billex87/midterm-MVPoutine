@@ -1,6 +1,7 @@
 /// load .env data into process.env
 require('dotenv').config();
 
+
 // Web server config
 const PORT = process.env.PORT || 8080;
 const ENV = process.env.ENV || "development";
@@ -57,7 +58,11 @@ app.use(cookieSession({
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 app.get("/", (req, res) => {
-  res.render("index");
+  return db.query(`SELECT * FROM menu`)
+    .then(data => {
+      console.log('DATA', data);
+      let templateVar = data.rows;
+      res.render('index', {templateVar})});
 });
 
 // app.get("/login/:user_id", (req, res) => {
