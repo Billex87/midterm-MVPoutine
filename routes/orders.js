@@ -25,5 +25,9 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
+  router.post("/:id", (req, res) => {
+    console.log(req.params.id);
+  })
   return router;
 };
+
