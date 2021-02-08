@@ -31,7 +31,7 @@
           <span></span><span></span><span></span><span></span>
         </li>
         <li>
-          CONTACT
+          CART
           <span></span><span></span><span></span><span></span>
         </li>
       </ul>
@@ -62,15 +62,13 @@
                 <div class= "menu-item menu-left" >
                    <p><%=item.name%></p>
                    <p><%=item.description%></p>
-                   <div>
-                    $<%=item.price /100%>
+                   <div class="foot">
+                    <p> $<%=item.price /100%> </p>
+                    <button class="order-button">Order</button>
                    </div>
                   </div>
                 <div class= "menu-item menu-right" >
                   <img class= "menu-itemimage" src="<%= item.imgurl %>" alt= "">
-                 <div>
-                   <button id="order-button" class="order-button">Order</button>
-                  </div>
                 </div>
               </div>
               <%}%>
