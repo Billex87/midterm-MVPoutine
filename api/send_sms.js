@@ -3,7 +3,7 @@
 // and set the environment variables. See http://twil.io/secure
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
-const client = require('twilio')('AC8cfb45b8582801f9a1e5d15bd2266e62', '600a3635d5023f2dfe1f122da0e86485');
+const client = require('twilio')('AC8cfb45b8582801f9a1e5d15bd2266e62', 'ccfaf19142050b4c79b17c8c206bb731');
 
 client.messages
   .create({

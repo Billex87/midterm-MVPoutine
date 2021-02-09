@@ -1,12 +1,26 @@
-/**
- * The following route gets all values from the orders table given a user ID in POSTGRES-SQL and returns them as a
- * JSON when the user navigates to /api/order.
-**/
-
 const express = require('express');
 const router  = express.Router();
+const twilio = require('../api/twilio')
 
 module.exports = (db) => {
+  router.post("/", (req, res) => {
+    db.query(`INSERT INTO orders (user_id, order_status, owner_id, total_price)
+    VALUES (1, true, 1, 4869)
+    RETURNING *;`)
+      .then(data => {
+        console.log('hit route') //why isnt this showing?
+        const orders = data.rows;
+        twilio.smsOrderIn(orders,'+17782146187');
+        // res.json({ orders });  // this line will crash the page- lets delete it
+        res.render('orders', {orders});
+        // console.log(orders)
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+  });
   router.get("/", (req, res) => {
     // const ownerId = req.session.userID
     const ownerID = 1
@@ -30,4 +44,3 @@ module.exports = (db) => {
   })
   return router;
 };
-
