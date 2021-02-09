@@ -1,7 +1,7 @@
 // Order Page styling
 #order {
   display: flex;
-  background-color: #1e1c1c;
+  background-color: black;
   min-height: 100vh;
   color: #fff;
   // display: block;
@@ -17,9 +17,11 @@
 
 .order-summary{
     border: 2px solid yellow;
-    border-radius: 25px;
     background-color:transparent;
     margin: 0 auto;
+    border-radius: 25px;
+    background-image: url("https://www.transparenttextures.com/patterns/food.png");
+
   }
 
 
