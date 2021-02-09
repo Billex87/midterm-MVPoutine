@@ -41,7 +41,15 @@ $(document).ready(() => {
     renderCart(cartArr);
   };
 
-
+  $('#orderCompleteButton').click(function () {
+    console.log('STEP UP');
+    $.ajax({
+      method: "POST",
+      url: "/api/orders/complete"
+    }).done((fuckya) => {
+      console.log("fuckya");
+    })
+  });
 
   const createCartItem = function (name, price, quantity) {
     const $cart = $(`<li>${name}</li>

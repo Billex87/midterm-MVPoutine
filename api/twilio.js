@@ -33,11 +33,11 @@ const smsOrderIn = (order_items, phone) => {
   });
 }
 //Post Request
-const smsCustomer = (orderid, time, phoneNumber) => {
-  const message = `Yo Bro, Your Order # Is:${orderid} That Shit Will Be Ready In${time} Minuto(s)!`
+const smsReady = () => {
+  const message = `Yo Bro, Your Shit Is Ready, Come Get It You Lazy Fuck!`
   client.messages.create({
     from: "+18016093070", //twilio
-    to: `+1${phoneNumber}`, //customer
+    to: "+17782146187", //customer
     body: message
   }, (err, message) => {
     if (err) {
@@ -46,21 +46,20 @@ const smsCustomer = (orderid, time, phoneNumber) => {
   });
 }
 // POST REQUEST
-const smsReady = (orderid, phoneNumber) => {
-  const message = `Hey There. Your Order ID From These Bad Ass Mofo's Is #${orderid} !`
-  client.messages.create({
-    from: "+18016093070", //twilio
-    to: `+1${phoneNumber}`, //customer
-    body: message
-  }, (err, message) => {
-    if (err) {
-      return err;
-    }
-  });
-}
+// const smsCustomer = (orderid, phoneNumber) => {
+//   const message = `Hey There. Your Order ID From These Bad Ass Mofo's Is #${orderid} !`
+//   client.messages.create({
+//     from: "+18016093070", //twilio
+//     to: `+1${phoneNumber}`, //customer
+//     body: message
+//   }, (err, message) => {
+//     if (err) {
+//       return err;
+//     }
+//   });
+// }
 
 module.exports = {
   smsOrderIn,
-  customer: smsCustomer,
-  ready: smsReady
+  smsReady
 };
