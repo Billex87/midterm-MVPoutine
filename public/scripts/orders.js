@@ -1,21 +1,18 @@
-/*
- * All routes for Widgets are defined here
- * Since this file is loaded in server.js into api/widgets,
- *   these routes are mounted onto /widgets
- * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
- */
-
 const express = require('express');
 const router  = express.Router();
 
+
 module.exports = (db) => {
-  router.get("/", (req, res) => {
-    let query = `SELECT * FROM widgets`;
-    console.log(query);
-    db.query(query)
+  router.post("/", (req, res) => {
+    db.query(`INSERT INTO orders (user_id, order_status, owner_id, total_price)
+    VALUES (1, true, 1, 4869)
+    RETURNING *;`)
       .then(data => {
-        const widgets = data.rows;
-        res.json({ widgets });
+        console.log('hit route') //why isnt this showing?
+        const orders = data.rows;
+        // res.json({ orders });  // this line will crash the page- lets delete it
+        res.render('orders', {orders});
+        // console.log(orders)
       })
       .catch(err => {
         res
@@ -23,5 +20,37 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
+  router.get("/", (req, res) => {
+    // const ownerId = req.session.userID
+    const ownerID = 1
+    // console.log(ownerId)
+    db.query(`SELECT * FROM orders WHERE owner_id = '${ownerID}';`)
+      .then(data => {
+        // console.log(data)
+        const orders = data.rows;
+        // res.json({ orders });  // this line will crash the page- lets delete it
+        res.render('orders', {orders}); //added by idil to make orders page
+        // console.log(orders)
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+  });
+  router.post("/:id", (req, res) => {
+    console.log(req.params.id);
+  })
   return router;
 };
+
+
+//for loop through array of object
+//order items takes menu_id, orders_id (from other), quantity**, comments
+// const loopThroughOrder = (order) => {
+//  for (let item of Arr) {
+//   db.query(`INSERT INTO order_items (menu_id, orders_id, quantity, total_price)
+//     VALUES (item.name, ??, item.quantity, 4869)
+//     ;`)
+//  }
+// }
