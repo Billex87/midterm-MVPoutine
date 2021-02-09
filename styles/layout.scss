@@ -12,7 +12,7 @@
 @import 'menu';
 @import'orders';
 
-  :root, p {
+  :root  {
   --navbar-width: 15rem;
   box-sizing: border-box;
   margin: 0;
@@ -26,6 +26,10 @@ body {
   flex-direction: row;
   margin: 0;
   border: solid red
+}
+
+html{
+  height: 100vh;
 }
 
 .content-container {

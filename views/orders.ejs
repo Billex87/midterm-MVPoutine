@@ -17,36 +17,40 @@
 
 
 
+
     <%for(let item of orders){%>
-    <section class="order">
-      <!-- PAGE TEMPLATE  -->
-      <section>
-        <div class= "order-status " >
-           <p> <%=item.order_status%> </p>
+
+      <section id="order">
+        <div class="col-md-3 ">
+          <div class="text-box">
+            <p class="header-size">Thank you for your order</p>
+            </div>
+        </div>
+
+        <!-- Order Container  -->
+        <div class="container">
+
+          <section class="order-summary">
+              <div class="text-box">
+                <p class="number">Order Status</p>
+                <h4><%=item.order_status%></h4> </div>
+              <div class="text-box">
+                <p class="number">Time</p>
+                <h4><%=item.order_begin%> </h4> </div>
+              <div class="text-box">
+                <p class="number">SubTotal</p>
+                <h4>$ <%=item.total_price/100%> </h4> </div>
+
+            </section>
+
         </div>
       </section>
 
-      <section>
-        <div class= "order-status " >
-           <p> <%=item.order_begin%>  </p>
-        </div>
-      </section>
 
-      <section>
-        <div class= "order-status " >
-           <p> Your order will be complete in
-                30 minutes or less. If we lie we buy! </p>
-        </div>
-      </section>
+      <%}%>
 
+      <!-- test -->
 
-      <section>
-        <div class= "order-price " >
-           <p> $ <%=item.total_price/100%>
-           </p>
-        </div>
-        <%}%>
-      </section>
 
 
   </body>
