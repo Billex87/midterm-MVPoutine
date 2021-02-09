@@ -15,43 +15,19 @@
 
     <%- include('partials/_navbar') %>
 
-
-
-
     <%for(let item of orders){%>
 
       <section id="order">
-        <div class="col-md-3 ">
-          <div class="text-box">
-            <p class="header-size">Thank you for your order</p>
-            </div>
-        </div>
-
-        <!-- Order Container  -->
-        <div class="container">
-
           <section class="order-summary">
-              <div class="text-box">
+            <p class="header-size">Thank you for your order</p>
                 <p class="number">Order Status</p>
-                <h4><%=item.order_status%></h4> </div>
-              <div class="text-box">
+                <h4><%=item.order_status%></h4>
                 <p class="number">Time</p>
-                <h4><%=item.order_begin%> </h4> </div>
-              <div class="text-box">
+                <h4><%=item.order_begin%> </h4>
                 <p class="number">SubTotal</p>
-                <h4>$ <%=item.total_price/100%> </h4> </div>
-
-            </section>
-
-        </div>
-      </section>
-
-
+                <h4>$ <%=item.total_price/100%> </h4>
+             </section>
       <%}%>
-
-      <!-- test -->
-
-
 
   </body>
 </html>
