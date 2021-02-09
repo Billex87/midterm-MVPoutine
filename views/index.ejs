@@ -10,6 +10,11 @@
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/scripts/buttonorders.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100;600&family=Caveat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Spartan:wght@100&display=swap" rel="stylesheet">
   </head>
 
   <body>
@@ -23,12 +28,15 @@
 
          <!-- Photo Div -->
         <section>
-          <img src= '/images/Poutine-Header.png'  alt="Header Image" width= "100%" />
+          <img src= '/images/Poutine-Header.png'  alt="Header Image" width= "100%"/>
         </section>
+
+
 
           <!-- Menu Div -->
         <section id="menuscroll" class="menu">
               <%for(let item of templateVar){%>
+
               <div class= "menu-box">
                 <div class= "menu-item menu-left" >
                    <p class= "title"><%=item.name%></p>
@@ -36,6 +44,12 @@
                    <div class="foot">
                     <p> $<%=item.price /100%> </p>
                     <button class="order-button">ORDER</button>
+
+
+
+
+
+
                    </div>
                   </div>
                 <div class= "menu-item menu-right" >
@@ -47,3 +61,5 @@
       </main>
   </body>
 </html>
+
+
