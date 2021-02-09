@@ -60,7 +60,7 @@ app.use(cookieSession({
 app.get("/", (req, res) => {
   return db.query(`SELECT * FROM menu`)
     .then(data => {
-      console.log('DATA', data);
+      // console.log('DATA', data);
       let templateVar = data.rows;
       res.render('index', {templateVar})});
 });

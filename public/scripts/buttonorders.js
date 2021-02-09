@@ -1,5 +1,5 @@
 $(document).ready(() => {
-  $('.order-button').click(function() {
+  $('.order-button').click(function () {
     const button = $(this);
     const div = button.parent();
     const container = div.parent();
@@ -7,7 +7,10 @@ $(document).ready(() => {
     let price = container.find(".foot").find("p").text();
 
     checkItemQuantity({ name: p.html(), price: price, quantity: 1 });
-    console.log('cartArr', cartArr);
+
+    // console.log('cartArr', cartArr);
+    $('#poppin').removeClass('hidden-popup')
+
     // $.ajax({
     //   method: "POST",
     //   url: "/api/orders/"
@@ -18,35 +21,37 @@ $(document).ready(() => {
 
   let cartArr = [];
 
-  const checkItemQuantity = function(newItem) {
-    let flag = false;
+  const checkItemQuantity = function (newItem) {
+ let flag = false;
     for (let item of cartArr) {
-      console.log('forItem', item);
+      // console.log('forItem', item);
 
       if (item.name === newItem.name) {
         item.quantity = item.quantity + 1;
-        console.log('matched item', newItem); flag = true;
+        // console.log('matched item', newItem); flag = true
         break;
       }
-      console.log("rendercartArr1", cartArr);
+      // console.log("rendercartArr1", cartArr)
     }
-    if (!flag) {
-      console.log("else");
-      cartArr.push({ name: newItem.name, price: newItem.price, quantity: 1 });
-    }
+      if (!flag){
+        // console.log("else");
+        cartArr.push({ name: newItem.name, price: newItem.price, quantity: 1 });
+      }
 
     renderCart(cartArr);
   };
 
-  const createCartItem = function(name, price, quantity) {
+
+
+  const createCartItem = function (name, price, quantity) {
     const $cart = $(`<li>${name}</li>
-   <li>Price: ${price}</li>
+   <li class="popupcss">Price: ${price}</li>
    <li>Quantity: ${quantity}</li>
    `);
     return $cart;
   };
 
-  const renderCart = function(cartItems) {
+  const renderCart = function (cartItems) {
     const container = $(".nav-popup ul");
     container.empty();
     for (let item of cartItems) {
@@ -57,4 +62,6 @@ $(document).ready(() => {
       container.append($cart);
     }
   };
+
+
 });

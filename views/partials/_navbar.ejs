@@ -5,15 +5,11 @@
     </div>
     <ul>
       <li>
-        HOME
+        <a href="/">HOME</a>
         <span></span><span></span><span></span><span></span>
       </li>
       <li>
-        MENU
-        <span></span><span></span><span></span><span></span>
-      </li>
-      <li>
-        ORDER ONLINE
+        <a href="#menuscroll">MENU</a>
         <span></span><span></span><span></span><span></span>
       </li>
       <li>
@@ -25,7 +21,7 @@
 
   <!-- popup babyyyyy -->
   <nav class="nav-popup">
-    <div>
+    <div id="poppin" class="hidden-popup">
       <div class="shopping-cart">
         <!-- Order Cart: Header-->
         <div class="shopping-cart-header">
@@ -37,7 +33,7 @@
         </div>
     <ul>
     </ul>
-    <form action="/order" method="POST">
+    <form action="/api/orders" method="POST">
       <button id="btnSubmit" class="button" runat="server" Text="Checkout">Checkout</button>
       <button id="divMsg" class="button" style="display:none;">
         <img class="loadImg" src="/assets/img/loadCircle.png" alt="Please wait.." />

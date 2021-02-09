@@ -14,19 +14,16 @@ client.messages.create({
 }).then((message) => console.log(message.sid));
 */
 const accountSid = 'AC8cfb45b8582801f9a1e5d15bd2266e62'; //process.env.TWILIO_ACCOUNT_SID;
-const authToken  = '600a3635d5023f2dfe1f122da0e86485';  //process.env.TWILIO_AUTH_TOKEN;
+const authToken  = 'ccfaf19142050b4c79b17c8c206bb731';  //process.env.TWILIO_AUTH_TOKEN;
 const client     = require('twilio')(accountSid, authToken);
 // POST REQUEST
-const smsRestaurant = (orderid, phone) => {
-  const message = `CHA CHING. Order # Is: ${orderid}.`
+const smsOrderIn = (order_items, phone) => {
+  const message = `CHA CHING. Order # is:${1}. For your order of: ${JSON.stringify(order_items)}.`
   client.messages.create({
     from: "+18016093070", //twilio
-    to: phone, //"+16477864414", //restaurant
+    to: "+17782146187",  //restaurant
     body: message
   },
-//function(err, call) {
-   // process.stdout.write(call.sid);
-//});
   (err, message) => {
     if (err) {
       return err;
@@ -61,7 +58,7 @@ const smsReady = (orderid, phoneNumber) => {
 }
 
 module.exports = {
-  restaurant: smsRestaurant,
+  smsOrderIn,
   customer: smsCustomer,
   ready: smsReady
 };
