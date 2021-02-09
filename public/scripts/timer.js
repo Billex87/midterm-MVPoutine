@@ -3,7 +3,7 @@
 //Timer for when order is made
 
 $(() => {
-  const startingMinutes = 20;
+  const startingMinutes = 1;
   let time = startingMinutes * 60;
 
   const countdownElement = document.getElementById('countdown-timer');

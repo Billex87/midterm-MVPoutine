@@ -10,6 +10,9 @@
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
 
+    <!-- Fonts  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100;600&display=swap" rel="stylesheet">
 
   </head>
 
@@ -29,26 +32,14 @@
       <section id="order">
 
            <section class="order-summary">
-            <!-- <p class="header-size">Thank you for your order</p>
-                <p class="number">Order Status</p>
-                <p class="col-12 text-center"> Get your poutine within 25 minutes or less.
-                   If we're lying, we're buying!</p>
-                <h4><%=item.order_status%></h4>
-                <p class="number">Time</p>
-                <!-- timer function  -->
-                <!-- <h4><%=item.order_begin%> </h4>
-                <p class="number">SubTotal</p>
-                <h4>$ <%=item.total_price/100%> </h4> -->
-
                 <!-- test  -->
-                <div class="btn from-top">Thank you for your order</div>
-                <div class="btn from-left">Get your poutine within 25 minutes or less.
+                <div class="order-header">Thank you for your order</div>
+                <div class="btn">Get your poutine within 20 minutes or less.
                   If we're lying, we're buying</div>
-                <div class="btn from-right"><%=item.order_status%></div>
-                <div id="countdown-timer" class="btn from-center"> </div>
-                <div class="btn from-bottom">$ <%=item.total_price/100%> </div>
+                <div class="btn"><%=item.order_status%></div>
+                <div id="countdown-timer" class="btn"> </div>
+                <div class="btn">$ <%=item.total_price/100%> </div>
              </section>
-
 
       <%}%>
 
