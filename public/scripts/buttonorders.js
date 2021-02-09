@@ -19,4 +19,20 @@ $(document).ready( () => {
   })
 
   let cartArr = [];
+
+
+  const createCartItem = function(cartArr) {
+    const $cart= $(`<li>${cartArr.name}</li>
+    `);
+      return $cart;
+  }
+
+  const renderCart = function(cartItems) {
+   const container = $(".nav-popup ul");
+   for (let item of cartItems) {
+     const cartElement = createCartItem(item);
+     container.append(cartElement);
+   }
+ };
+
 });

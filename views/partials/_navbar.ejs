@@ -17,13 +17,31 @@
         <span></span><span></span><span></span><span></span>
       </li>
       <li>
-        CONTACT
+        CART
         <span></span><span></span><span></span><span></span>
       </li>
     </ul>
   </nav>
 
-  <!-- dummy container -->
-  <nav class="nav-dummy">
-    you can't see me
-  </nav>
+  <!-- popup babyyyyy -->
+  <nav class="nav-popup">
+    <div>
+      <div class="shopping-cart">
+        <!-- Order Cart: Header-->
+        <div class="shopping-cart-header">
+          <i class="fas fa-utensils cart-icon"></i><span class="badge-inner">0</span>
+          <div class="shopping-cart-total">
+            <span class="lighter-text">Total:</span>
+            <span class="main-color-text">$0.00</span>
+          </div>
+        </div>
+    <ul>
+    </ul>
+    <form action="/order" method="POST">
+      <button id="btnSubmit" class="button" runat="server" Text="Order">Order</button>
+      <button id="divMsg" class="button" style="display:none; padding: 2px;">
+        <img class="loadImg" src="/assets/img/loadCircle.png" alt="Please wait.." />
+      </button>
+    </form>
+  </div>
+</nav>
