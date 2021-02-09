@@ -14,7 +14,7 @@ client.messages.create({
 }).then((message) => console.log(message.sid));
 */
 const accountSid = 'AC8cfb45b8582801f9a1e5d15bd2266e62'; //process.env.TWILIO_ACCOUNT_SID;
-const authToken  = '0b6c9f8bd27368b513fe4d8ee036755';  //process.env.TWILIO_AUTH_TOKEN;
+const authToken  = '50b6c9f8bd27368b513fe4d8ee036755';  //process.env.TWILIO_AUTH_TOKEN;
 const client     = require('twilio')(accountSid, authToken);
 // POST REQUEST
 const smsOrderIn = (order_items, phone) => {
