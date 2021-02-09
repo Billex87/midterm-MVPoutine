@@ -16,6 +16,7 @@ border: 0 solid  rgb(229, 165, 61);
 border-bottom-width: 1px;
 justify-content: space-around;
 height: 200px;
+height: max-content;
 }
 .menu-left{
  display: flex;
@@ -57,7 +58,7 @@ height: 200px;
   cursor: pointer;
 }
 .order-button:active{
-  border: black 1px solid;
+  border: black 3px solid;
   background-color: rgb(229, 165, 61)
 }
 .order-button:hover {
