@@ -5,10 +5,12 @@ $(document).ready( () => {
     const container = div.parent()
     const p = container.find("p")
     const price = container.find(".foot").find("p").text()
-    console.log("THE P", p.html());
-    console.log("Price", price);
+    // console.log("THE P", p.html());
+    // console.log("Price", price);
     cartArr.push({name:p.html(), price:price});
     console.log(cartArr);
+    const newCartItem = createCartItem(p.html(), price);
+    renderCart(newCartItem);
 
     // $.ajax({
     //   method: "POST",
@@ -19,20 +21,28 @@ $(document).ready( () => {
   })
 
   let cartArr = [];
+//number of items function?
+//work on the order button
 
 
-  const createCartItem = function(cartArr) {
-    const $cart= $(`<li>${cartArr.name}</li>
-    `);
-      return $cart;
+
+
+ //this is all within the document ready
+
+ const createCartItem = function(name, price) {
+   const $cart= $(`<li>${name}</li>
+   <li>Price: ${price}</li>
+   <li>Quantity: 1</li>
+   `);
+     return $cart;
+ }
+
+ const renderCart = function(cartItems) {
+  const container = $(".nav-popup ul");
+  for (let item of cartItems) {
+    container.append(item);
   }
+};
 
-  const renderCart = function(cartItems) {
-   const container = $(".nav-popup ul");
-   for (let item of cartItems) {
-     const cartElement = createCartItem(item);
-     container.append(cartElement);
-   }
- };
 
 });

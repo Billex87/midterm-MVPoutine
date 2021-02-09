@@ -34,14 +34,22 @@ height: 200px;
   justify-content: space-between;
   // overflow-y: scroll;
 }
+.title {
+  font-family: fantasy;
+  font-weight: bolder;
+  font-size: 42px;
+}
+.description {
+  font-family: monospace;
+}
 .foot {
   display: flex;
+  // font-weight: bolder;
   color:  rgb(229, 165, 61);
   align-items: center;
   // border: 1px green solid;
   justify-content: space-between;
   width: 100%;
-
 }
 .order-button{
   justify-content: space-around;
