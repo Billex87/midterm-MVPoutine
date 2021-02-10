@@ -20,7 +20,7 @@ $(document).ready(() => {
     event.preventDefault();
     console.log(cartArr);
     $.post(
-      "/api/orders", {cart: cartArr, test:5})
+      "/api/orders", {cart: cartArr})
     .then(() => {
       window.location.href = "http://localhost:8080/api/orders"
     })
