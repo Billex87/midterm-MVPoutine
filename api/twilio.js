@@ -17,9 +17,7 @@ const accountSid = 'AC8cfb45b8582801f9a1e5d15bd2266e62'; //process.env.TWILIO_AC
 const authToken  = '50b6c9f8bd27368b513fe4d8ee036755';  //process.env.TWILIO_AUTH_TOKEN;
 const client     = require('twilio')(accountSid, authToken);
 // POST REQUEST
-const smsOrderIn = (orderID, totalPrice) => {
   const message = `CHA CHING. Order # is: ${orderID}`
-  // console.log((order_items, "ORDER ITEMS"));
   // console.log((order_items.keys));
   client.messages.create({
     from: "+18016093070", //twilio
@@ -31,7 +29,7 @@ const smsOrderIn = (orderID, totalPrice) => {
       return err;
     }
   });
-}
+
 //Post Request
 const smsReady = () => {
   const message = `Yo Bro, Your Shit Is Ready, Come Get It You Lazy Fuck!`

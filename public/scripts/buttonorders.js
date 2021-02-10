@@ -15,8 +15,8 @@ $(document).ready(() => {
 
   });
   //from the navbar
-  $('.nav-popup button').click(function (event) {
-    console.log('running')
+  $('.nav-popup button').click(function(event) {
+    console.log('RUNNING')
     event.preventDefault();
     console.log(cartArr);
     $.post(
@@ -24,7 +24,7 @@ $(document).ready(() => {
     .then(() => {
       window.location.href = "http://localhost:8080/api/orders"
     })
-    .catch(console.log);
+    .catch(error => {console.log("ERROR", error)});
   });
 //  function clickFunction (event) {
 //   event.PreventDefault();

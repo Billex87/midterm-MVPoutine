@@ -7,3 +7,4 @@ CREATE TABLE order_items (
   quantity INTEGER,
   comments text
 );
+

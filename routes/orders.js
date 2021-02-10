@@ -9,22 +9,25 @@ module.exports = (db) => {
     let totalPrice = 0;
     console.log('req.body', req.body)
     // const cartItems = req.body
+    //calculate totalprice here
     db.query(`INSERT INTO orders (user_id, order_status, owner_id)
     VALUES (1, true, 1)
     RETURNING *;`)
       .then(data => {
-        console.log('typeof req.body', typeof req.body)
+        console.log("DATA",data);
         let cartItems = req.body.cart
-        console.log(data.rows[0]) //to check orders_id
+        console.log('data.rows', data.rows) //to check orders_id
         for (let item of cartItems) {
           totalPrice += item.price
-          db.query(`INSERT INTO order_items (menu_id, orders_id, quantity, comments)
-          VALUES ("${item.name}", ${data.rows[0].orders_id}, ${item.quantity});`)
+          let paramsArray = [ Number(item.id), data.rows[0].id, Number(item.quantity) ]
+          console.log('paramsArray', paramsArray)
+          db.query(`INSERT INTO order_items (menu_id, orders_id, quantity)
+          VALUES ( $1, $2, $3);`, paramsArray)
           .catch(err => console.log(err))
         }
         console.log('hit route')
         const orders = data.rows;
-        twilio.smsOrderIn(orders,'+17782146187')
+        twilio.smsOrderIn(data.rows[0].id,'')
         res.render('orders', {orders});
       })
       .catch(err => {
@@ -62,3 +65,5 @@ module.exports = (db) => {
   })
   return router;
 };
+
+//why isnt this working

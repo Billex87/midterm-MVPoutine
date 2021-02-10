@@ -1,20 +1,38 @@
 const express = require('express');
 const router  = express.Router();
+const twilio = require('../api/twilio')
 
-
+ //order end** -30 min timer - order_end
 module.exports = (db) => {
   router.post("/", (req, res) => {
-    db.query(`INSERT INTO orders (user_id, order_status, owner_id, total_price)
-    VALUES (1, true, 1, 4869)
+    // let totalPrice = document.getElementByID
+    let totalPrice = 0;
+    console.log('req.body', req.body)
+    // const cartItems = req.body
+    //calculate totalprice here
+    db.query(`INSERT INTO orders (user_id, order_status, owner_id)
+    VALUES (1, true, 1)
     RETURNING *;`)
       .then(data => {
-        console.log('hit route') //why isnt this showing?
+        // console.log('typeof req.body', typeof req.body)
+        let cartItems = req.body.cart
+        console.log('data.rows', data.rows) //to check orders_id
+        for (let item of cartItems) {
+          totalPrice += item.price
+          let paramsArray = [ Number(item.id), data.rows[0].id, Number(item.quantity) ]
+          console.log('paramsArray', paramsArray)
+          db.query(`INSERT INTO order_items (menu_id, orders_id, quantity)
+          VALUES ( $1, $2, $3);`, paramsArray)
+          .catch(err => console.log(err))
+        }
+
+        console.log('hit route')
         const orders = data.rows;
-        // res.json({ orders });  // this line will crash the page- lets delete it
+        twilio.smsOrderIn(data.rows[0].id,'+17782146187')
         res.render('orders', {orders});
-        // console.log(orders)
       })
       .catch(err => {
+        console.log(err)
         res
           .status(500)
           .json({ error: err.message });
@@ -41,16 +59,10 @@ module.exports = (db) => {
   router.post("/:id", (req, res) => {
     console.log(req.params.id);
   })
+  router.post("/complete", (req, res) => {
+    console.log("LOOK");
+    twilio.smsReady()
+    res.redirect('/')
+  })
   return router;
 };
-
-
-//for loop through array of object
-//order items takes menu_id, orders_id (from other), quantity**, comments
-// const loopThroughOrder = (order) => {
-//  for (let item of Arr) {
-//   db.query(`INSERT INTO order_items (menu_id, orders_id, quantity, total_price)
-//     VALUES (item.name, ??, item.quantity, 4869)
-//     ;`)
-//  }
-// }
