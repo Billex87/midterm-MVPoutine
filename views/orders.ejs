@@ -1,47 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Home Page</title>
 
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
-    <script type="text/javascript" src="/scripts/buttonorders.js"></script>
+<head>
+  <title>Home Page</title>
 
-    <!-- Fonts  -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
+  <script type="text/javascript" src="/scripts/buttonorders.js"></script>
 
-  </head>
+  <!-- Fonts  -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100;600&display=swap"
+    rel="stylesheet">
 
-
-  <body>
-    <script type="text/javascript" src="/scripts/timer.js"></script>
+</head>
 
 
-    <%- include('partials/_navbar') %>
+<body>
+  <script type="text/javascript" src="/scripts/timer.js"></script>
 
 
-    <section id="order">
-    <%for(let item of orders){%>
+  <%- include('partials/_navbar') %>
 
 
 
-           <section class="order-summary">
-                <!-- test  -->
-                <div class="order-header">Thank you for your order</div>
-                <div class="btn">Get your poutine within 20 minutes or less.
-                  If we're lying, we're buying</div>
-                <div class="btn"><%=item.order_status%></div>
-                <div id="countdown-timer" class="btn"> </div>
-                <div class="btn">$ <%=item.total_price%> </div>
-                <button id="orderCompleteButton">Order Complete</button>
-             </section>
+    <%for(let item in orders){%>
+      <section id="order">
 
+        <section class="order-summary">
+          <!-- test  -->
+          <div class="order-header">Thank you for your order</div>
+          <div class="btn">Get your poutine within 20 minutes or less.
+            If we're lying, we're buying</div>
+          <div class="order-id">Here is your order id: <%=item%>
+          </div>
+          <div class="btn">Currently being prepared</div>
+          <%for(let orderItem in orders[item]){%>
+            <div class="your-order">Here is your order: <%=orders[item][orderItem].name%>
+            </div>
+            <div class="item-quantity">Quantity: <%=orders[item][orderItem].quantity%>
+            </div>
+            <div id="countdown-timer" class="btn"></div>
+            <%}%>
+              <div class="btn">$ <%=orders[item][0].total_price%>
+              </div>
+              <!-- <button id="orderCompleteButton">Order Complete</button> -->
+        </section>
+      </section>
       <%}%>
-    </section>
-  </body>
+
+
+
+</body>
+
 </html>
+
+<!-- //add a UL outside of the for loop and loop over each order and create an li -->
+<!-- //display it vertically and make sure the newest is at the top -->
+<!-- //why have one section nested right into the other section here? -->
