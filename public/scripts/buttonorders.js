@@ -60,8 +60,8 @@ $(document).ready(() => {
     $.ajax({
       method: "POST",
       url: "/api/orders/complete"
-    }).done((fuckya) => {
-      console.log("fuckya");
+    }).then(() => {
+      window.location.href = "http://localhost:8080/api/orders"
     })
   });
 

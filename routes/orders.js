@@ -36,13 +36,13 @@ module.exports = (db) => {
             .catch(err => console.log(err));
         }
 
-        console.log('hit route');
         const orders = data.rows;
         twilio.smsOrderIn(data.rows[0].id, data.rows[0].total_price);
-        res.render('orders', { orders });
+        twilio.smsRestaurant(data.rows[0].id)
+        res.render('orders', {orders});
       })
       .catch(err => {
-        console.log(err);
+        console.log(err)
         res
           .status(500)
           .json({ error: err.message });
@@ -50,14 +50,14 @@ module.exports = (db) => {
   });
   router.get("/", (req, res) => {
     // const ownerId = req.session.userID
-    const ownerID = 1;
+    const ownerID = 1
     // console.log(ownerId)
     db.query(`SELECT * FROM orders WHERE owner_id = '${ownerID}';`)
       .then(data => {
         // console.log(data)
         const orders = data.rows;
         // res.json({ orders });  // this line will crash the page- lets delete it
-        res.render('orders', { orders }); //added by idil to make orders page
+        res.render('orders', {orders}); //added by idil to make orders page
         // console.log(orders)
       })
       .catch(err => {
@@ -66,15 +66,14 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
+  router.post("/complete", (req, res) => {
+    console.log("COMPLETE ROUTE");
+    twilio.smsReady()
+    res.redirect('/')
+  })
   router.post("/:id", (req, res) => {
     console.log(req.params.id);
-  });
-  router.post("/complete", (req, res) => {
-    console.log("LOOK");
-    twilio.smsReady();
-    res.redirect('/');
-  });
+  })
   return router;
 };
 
-//why isnt this working
