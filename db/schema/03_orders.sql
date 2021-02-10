@@ -7,7 +7,7 @@ CREATE TABLE orders (
   order_begin TIME DEFAULT CURRENT_TIME(2),
   order_end TIMESTAMP,
   owner_id VARCHAR(225),
-  total_price INTEGER
+  total_price DECIMAL
 );
 
 

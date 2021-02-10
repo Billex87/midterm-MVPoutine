@@ -80,6 +80,7 @@ $(document).ready(() => {
     //   totalPriceElement.remove()
     // }
     let totalPriceCart = 0;
+    let totalQuantityCart = 0
     container.empty();
     for (let item of cartItems) {
       const $cart = $(`<li>${item.name}</li>
@@ -88,10 +89,13 @@ $(document).ready(() => {
     `);
       container.append($cart);
       totalPriceCart += item.quantity * item.price;
+      totalQuantityCart += item.quantity;
     }
     const totalPriceElementContainer = $(".nav-popup .shopping-cart .shopping-cart-header .shopping-cart-total .total-price");
     totalPriceElementContainer.html((totalPriceCart));
-    console.log(totalPriceCart);
+    const totalQuantityElementContainer = $(".nav-popup .shopping-cart .shopping-cart-header .total-quantity");
+    totalQuantityElementContainer.html((totalQuantityCart));
+    // console.log(totalPriceCart);
   };
 });
 
