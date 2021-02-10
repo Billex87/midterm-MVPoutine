@@ -24,11 +24,26 @@ const smsOrderIn = (orderID, totalPrice) => {
   // console.log((order_items.keys));
   client.messages.create({
     from: "+18016093070", //twilio
+    to: "+17782146187",  //user
+    body: message
+  },
+  (err, message) => {
+    if (err) {
+      return err;
+    }
+  });
+}
+const smsRestaurant = (orderID) => {
+  const message = `You Have A New Order. Please Advise When Completed. Order #${orderID}. `
+  console.log("HITTING HERE");
+  client.messages.create({
+    from: "+18016093070", //twilio
     to: "+17782146187",  //restaurant
     body: message
   },
   (err, message) => {
     if (err) {
+      console.log("LOOK HERE YA DUMMY", err);
       return err;
     }
   });
@@ -62,5 +77,6 @@ const smsReady = () => {
 
 module.exports = {
   smsOrderIn,
-  smsReady
+  smsReady,
+  smsRestaurant
 };

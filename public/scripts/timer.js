@@ -9,7 +9,6 @@ $(() => {
   const countdownElement = document.getElementById('countdown-timer');
 
   const updateCountdown = () => {
-    console.log("look here")
     const minutes = Math.floor(time / 60);
     let seconds = time % 60;
 
