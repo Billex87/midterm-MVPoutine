@@ -27,7 +27,7 @@ const smsRestaurant = (orderID) => {
       return err;
     }
   });
-
+}
 //Post Request
 const smsReady = () => {
   const message = `We've Poutine Extra Effort, Your Order Is Ready!`

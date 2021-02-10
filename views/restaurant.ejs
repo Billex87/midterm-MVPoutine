@@ -24,24 +24,24 @@
 
     <%- include('partials/_navbar') %>
 
-
+    
     <section id="order">
-    <%for(let item of orders){%>
+      <%for(let item of orders){%>
 
 
 
-           <section class="order-summary">
-                <!-- test  -->
-                <div class="order-header">Thank you for your order</div>
-                <div class="btn">Get your poutine within 20 minutes or less.
-                  If we're lying, we're buying</div>
-                <div class="btn"><%=item.order_status%></div>
-                <div id="countdown-timer" class="btn"> </div>
-                <div class="btn">$ <%=item.total_price%> </div>
-                <button id="orderCompleteButton">Order Complete</button>
-             </section>
+             <section class="order-summary">
+                  <!-- test  -->
+                  <div class="order-header">New order</div>
+                  <div class="btn">Order #id</div>
+                  <div class="btn"><%=item.order_status%></div>
+                  <div id="countdown-timer" class="btn"> </div>
+                  <div class="btn">$ <%=item.total_price%> </div>
+                  <button id="orderCompleteButton">Order Complete</button>
+               </section>
 
-      <%}%>
-    </section>
+        <%}%>
+      </section>
+
   </body>
 </html>
