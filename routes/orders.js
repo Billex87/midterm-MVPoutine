@@ -50,14 +50,13 @@ module.exports = (db) => {
   });
   router.get("/", (req, res) => {
     // const ownerId = req.session.userID
-    const ownerID = 1;
     // console.log(ownerId)
-    db.query(`SELECT * FROM orders WHERE owner_id = '${ownerID}';`)
+    db.query(`SELECT * FROM orders WHERE user_id = 1;`)
       .then(data => {
         // console.log(data)
         const orders = data.rows;
         // res.json({ orders });  // this line will crash the page- lets delete it
-        res.render('orders', { orders }); //added by idil to make orders page
+        res.render('orders', {orders}); //added by idil to make orders page
         // console.log(orders)
       })
       .catch(err => {
