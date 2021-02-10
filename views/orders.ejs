@@ -27,7 +27,7 @@
 
 
     <%for(let item of orders){%>
-      
+
       <section id="order">
 
            <section class="order-summary">
@@ -37,7 +37,7 @@
                   If we're lying, we're buying</div>
                 <div class="btn"><%=item.order_status%></div>
                 <div id="countdown-timer" class="btn"> </div>
-                <div class="btn">$ <%=item.total_price/100%> </div>
+                <div class="btn">$ <%=item.total_price%> </div>
                 <button id="orderCompleteButton">Order Complete</button>
              </section>
 
