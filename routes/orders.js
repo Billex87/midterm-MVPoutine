@@ -14,7 +14,7 @@ module.exports = (db) => {
     VALUES (1, true, 1)
     RETURNING *;`)
       .then(data => {
-        // console.log('typeof req.body', typeof req.body)
+        console.log("DATA",data);
         let cartItems = req.body.cart
         console.log('data.rows', data.rows) //to check orders_id
         for (let item of cartItems) {
@@ -25,10 +25,9 @@ module.exports = (db) => {
           VALUES ( $1, $2, $3);`, paramsArray)
           .catch(err => console.log(err))
         }
-
         console.log('hit route')
         const orders = data.rows;
-        twilio.smsOrderIn(data.rows[0].id,'+17782146187')
+        twilio.smsOrderIn(data.rows[0].id,'')
         res.render('orders', {orders});
       })
       .catch(err => {
