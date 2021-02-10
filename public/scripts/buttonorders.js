@@ -61,7 +61,7 @@ $(document).ready(() => {
       method: "POST",
       url: "/api/orders/complete"
     }).then(() => {
-      window.location.href = "http://localhost:8080/api/orders/complete"
+      window.location.href = "http://localhost:8080/api/orders"
     })
   });
 
