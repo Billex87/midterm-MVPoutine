@@ -23,14 +23,15 @@
 
 
     <%- include('partials/_navbar') %>
-
-
     <section id="order">
+      <%for(let item of orders){%>
              <section class="order-summary">
                   <div class="order-header">Order Complete</div>
-                  <div class="btn">Your order is available for pickup</div>
+                  <div class="btn">Heads up, your pickup order #ordernumber is ready for pickup</div>
 
                </section>
+               <%}%>
+
       </section>
 
   </body>
