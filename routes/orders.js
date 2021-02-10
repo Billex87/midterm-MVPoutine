@@ -36,13 +36,13 @@ module.exports = (db) => {
             .catch(err => console.log(err));
         }
 
-        console.log('hit route');
         const orders = data.rows;
         twilio.smsOrderIn(data.rows[0].id, data.rows[0].total_price);
-        res.render('orders', { orders });
+        twilio.smsRestaurant(data.rows[0].id)
+        res.render('orders', {orders});
       })
       .catch(err => {
-        console.log(err);
+        console.log(err)
         res
           .status(500)
           .json({ error: err.message });
@@ -65,15 +65,14 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
+  router.post("/complete", (req, res) => {
+    console.log("COMPLETE ROUTE");
+    twilio.smsReady()
+    res.redirect('/')
+  })
   router.post("/:id", (req, res) => {
     console.log(req.params.id);
-  });
-  router.post("/complete", (req, res) => {
-    console.log("LOOK");
-    twilio.smsReady();
-    res.redirect('/');
-  });
+  })
   return router;
 };
 
-//why isnt this working

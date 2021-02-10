@@ -3,6 +3,6 @@ CREATE TABLE menu (
   id SERIAL PRIMARY KEY NOT NULL,
   name varchar(255),
   description text,
-  price int,
+  price decimal,
   imgURL text
 );
