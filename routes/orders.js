@@ -2,20 +2,33 @@ const express = require('express');
 const router  = express.Router();
 const twilio = require('../api/twilio')
 
+ //order end** -30 min timer - order_end
 module.exports = (db) => {
   router.post("/", (req, res) => {
-    db.query(`INSERT INTO orders (user_id, order_status, owner_id, total_price)
-    VALUES (1, true, 1, 4869)
+    // let totalPrice = document.getElementByID
+    let totalPrice = 0;
+    console.log('req.body', req.body)
+    // const cartItems = req.body
+    db.query(`INSERT INTO orders (user_id, order_status, owner_id)
+    VALUES (1, true, 1)
     RETURNING *;`)
       .then(data => {
-        console.log('hit route') //why isnt this showing?
+        console.log('typeof req.body', typeof req.body)
+        let cartItems = req.body
+        console.log(data.rows[0]) //to check orders_id
+        for (let item of cartItems) {
+          totalPrice += item.price
+          db.query(`INSERT INTO order_items (menu_id, orders_id, quantity, comments)
+          VALUES ("${item.name}", ${data.rows[0].orders_id}, ${item.quantity});`)
+          .catch(err => console.log(err))
+        }
+        console.log('hit route')
         const orders = data.rows;
-        twilio.smsOrderIn(orders,'+17782146187');
-        // res.json({ orders });  // this line will crash the page- lets delete it
+        twilio.smsOrderIn(orders,'+17782146187')
         res.render('orders', {orders});
-        // console.log(orders)
       })
       .catch(err => {
+        console.log(err)
         res
           .status(500)
           .json({ error: err.message });

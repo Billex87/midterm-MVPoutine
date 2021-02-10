@@ -5,38 +5,54 @@ $(document).ready(() => {
     const container = div.parent();
     let p = container.find("p");
     let price = container.find(".foot").find("p").text();
-
-    checkItemQuantity({ name: p.html(), price: price, quantity: 1 });
-
-    // console.log('cartArr', cartArr);
+    console.log('price', price);
+    let priceTwo = price.slice(2);
+    console.log('price2', priceTwo);
+    checkItemQuantity({ name: p.html(), price: Number(priceTwo), quantity: 1 });
     $('#poppin').removeClass('hidden-popup')
 
-    // $.ajax({
-    //   method: "POST",
-    //   url: "/api/orders/"
-    // }).done((res) => {
-    //   console.log('Add item to order');
-    // })
+    console.log('cartArr', cartArr);
+
   });
+  //from the navbar
+  $('.nav-popup form').submit(function (event) {
+    console.log('running')
+    event.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "/api/orders",
+      data: JSON.stringify(cartArr),
+      contentType: 'application/json',
+    });
+  });
+
+//  function clickFunction (event) {
+//   event.PreventDefault();
+//   $.ajax({
+//     type: "POST",
+//     url: "/api/orders",
+//     data: "{‘cities’:['dhk','ctg']}",
+//   });
+//  }
 
   let cartArr = [];
 
   const checkItemQuantity = function (newItem) {
- let flag = false;
+    let flag = false;
     for (let item of cartArr) {
-      // console.log('forItem', item);
+      console.log('forItem', item);
 
       if (item.name === newItem.name) {
         item.quantity = item.quantity + 1;
-        // console.log('matched item', newItem); flag = true
+        console.log('matched item', newItem); flag = true;
         break;
       }
-      // console.log("rendercartArr1", cartArr)
+      console.log("rendercartArr1", cartArr);
     }
-      if (!flag){
-        // console.log("else");
-        cartArr.push({ name: newItem.name, price: newItem.price, quantity: 1 });
-      }
+    if (!flag) {
+      console.log("else");
+      cartArr.push({ name: newItem.name, price: newItem.price, quantity: 1 });
+    }
 
     renderCart(cartArr);
   };
@@ -80,3 +96,4 @@ $(document).ready(() => {
     console.log(totalPriceCart);
   };
 });
+
