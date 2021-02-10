@@ -8,24 +8,24 @@ $(document).ready(() => {
     console.log('price', price);
     let priceTwo = price.slice(2);
     console.log('price2', priceTwo);
-    checkItemQuantity({ name: p.html(), price: Number(priceTwo), quantity: 1 });
+    checkItemQuantity({ name: p.html(), price: Number(priceTwo), quantity: 1, id: button.data('id')});
     $('#poppin').removeClass('hidden-popup')
 
     console.log('cartArr', cartArr);
 
   });
   //from the navbar
-  $('.nav-popup form').submit(function (event) {
+  $('.nav-popup button').click(function (event) {
     console.log('running')
     event.preventDefault();
-    $.ajax({
-      type: "POST",
-      url: "/api/orders",
-      data: JSON.stringify(cartArr),
-      contentType: 'application/json',
-    });
+    console.log(cartArr);
+    $.post(
+      "/api/orders", {cart: cartArr, test:5})
+    .then(() => {
+      window.location.href = "http://localhost:8080/api/orders"
+    })
+    .catch(console.log);
   });
-
 //  function clickFunction (event) {
 //   event.PreventDefault();
 //   $.ajax({
@@ -34,9 +34,7 @@ $(document).ready(() => {
 //     data: "{‘cities’:['dhk','ctg']}",
 //   });
 //  }
-
   let cartArr = [];
-
   const checkItemQuantity = function (newItem) {
     let flag = false;
     for (let item of cartArr) {
@@ -51,9 +49,9 @@ $(document).ready(() => {
     }
     if (!flag) {
       console.log("else");
-      cartArr.push({ name: newItem.name, price: newItem.price, quantity: 1 });
+      cartArr.push({ name: newItem.name, price: newItem.price, quantity: 1, id: newItem.id});
+      console.log(newItem.id);
     }
-
     renderCart(cartArr);
   };
 

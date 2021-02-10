@@ -14,7 +14,7 @@ module.exports = (db) => {
     RETURNING *;`)
       .then(data => {
         console.log('typeof req.body', typeof req.body)
-        let cartItems = req.body
+        let cartItems = req.body.cart
         console.log(data.rows[0]) //to check orders_id
         for (let item of cartItems) {
           totalPrice += item.price
