@@ -19,7 +19,7 @@ const client     = require('twilio')(accountSid, authToken);
 // POST REQUEST
 //add in total price here
 const smsOrderIn = (orderID, totalPrice) => {
-  const message = `CHA CHING. Order # is: ${orderID}`
+  const message = `CHA CHING. Order # is: ${orderID} and your total cost is: ${totalPrice} `
   // console.log((order_items, "ORDER ITEMS"));
   // console.log((order_items.keys));
   client.messages.create({
