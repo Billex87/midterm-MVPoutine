@@ -55,13 +55,15 @@ $(document).ready(() => {
     renderCart(cartArr);
   };
 
-  $('#orderCompleteButton').click(function () {
-    console.log('STEP UP');
+  $('#orderCompleteButton').click(function (event) {
+    const $timer = $(event.currentTarget).siblings('#countdown-timer')
+    $timer.attr('data-status', "Done");
     $.ajax({
       method: "POST",
       url: "/api/orders/complete"
     }).then(() => {
-      window.location.href = "http://localhost:8080/api/orders"
+      // window.location.href = "http://localhost:8080/api/orders"
+      $timer.text("Completed")
     })
   });
 
