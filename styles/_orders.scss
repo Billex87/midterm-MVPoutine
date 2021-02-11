@@ -21,8 +21,9 @@
 
 .order-header{
   padding-top: 1rem;
-  font-family: 'Big Shoulders Display', cursive;
-  font-weight: 600;
+  // font-family: 'Spartan', sans-serif;
+  font-family: 'Caveat', cursive;
+  font-weight: 100;
   font-size: 3rem;
   background: rgb(67,98,196);
   border-radius: 20px;
@@ -32,7 +33,8 @@
 	position: relative;
 	padding: 1.4rem 4.2rem;
 	padding-right: 3.1rem;
-	font-size: 2rem;
+  font-size: 2rem;
+  font-weight: 400;
   color: var(--inv);
   font-family: 'Big Shoulders Display', cursive;
   background-color: black;
@@ -43,6 +45,8 @@
   color:  rgb(229, 165, 61);
   text-decoration: underline;
   padding-top: 9px;
+  font-family: 'Caveat', cursive;
+
 
 }
 
@@ -59,14 +63,55 @@
 #order-details{
   color:  rgb(229, 165, 61);
   text-decoration: underline;
+  font-family: 'Caveat', cursive;
+
+
 }
 
 .footer{
   position: relative;
 	padding: 1.4rem 4.2rem;
 	padding-right: 3.1rem;
-	font-size: 2rem;
+	font-size: 24px;
   color: var(--inv);
-  font-family: 'Big Shoulders Display', cursive;
+  font-family: 'Caveat', cursive;
+  // font-family: 'Spartan', sans-serif;
   background-color: black;
+}
+
+// Order complete button
+#orderCompleteButton{
+  justify-content: space-around;
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  color:rgb(229, 165, 61);
+  background-color: black;
+  border-radius: 15px;
+  font-family: 'Caveat', cursive;
+
+}
+#orderCompleteButton:active{
+  // border: black 3px solid;
+  background-color: rgb(229, 165, 61);
+
+
+}
+#orderCompleteButton:hover {
+  color: white;
+}
+
+#orderCompleteButton:hover {
+  transform: translateY(0) scale(1.2);
+}
+
+.details{
+  font-family: 'Big Shoulders Display', cursive;
+  font-size: 20px;
+}
+
+.total-price{
+  font-family: 'Big Shoulders Display', cursive;
+  font-size: 20px;
 }
