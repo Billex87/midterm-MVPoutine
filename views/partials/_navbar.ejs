@@ -20,7 +20,7 @@
         <span></span><span></span><span></span><span></span>
       </li>
     </li>
-     <li>
+     <li class="andy">
       Logged in: Andy
       <span></span><span></span><span></span><span></span>
     </li></ul>
@@ -48,3 +48,8 @@
 </nav>
 
 
+<script>$(document).ready(() => {
+  if(window.location.href.indexOf('orders/complete') !== -1) {
+     $('.andy').hide()
+  }
+})</script>

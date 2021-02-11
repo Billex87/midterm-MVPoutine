@@ -51,6 +51,7 @@ $(document).ready(() => {
     $timer.attr('data-status', "Done");
     console.log($timer);
     $timer.text("Completed")
+    $('#orderCompleteButton').hide()
   });
 
   const createCartItem = function (name, price, quantity) {
