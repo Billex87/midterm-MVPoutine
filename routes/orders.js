@@ -133,9 +133,8 @@ module.exports = (db) => {
       });
   });
   router.post("/complete", (req, res) => {
-    console.log("COMPLETE ROUTE");
+    // console.log("COMPLETE ROUTE");
     twilio.smsReady()
-    res.redirect('/')
   })
   router.post("/:id", (req, res) => {
     console.log(req.params.id);

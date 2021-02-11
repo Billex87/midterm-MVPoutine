@@ -49,13 +49,8 @@ $(document).ready(() => {
   $('#orderCompleteButton').click(function (event) {
     const $timer = $(event.currentTarget).siblings('#countdown-timer')
     $timer.attr('data-status', "Done");
-    $.ajax({
-      method: "POST",
-      url: "/api/orders/complete"
-    }).then(() => {
-      // window.location.href = "http://localhost:8080/api/orders"
-      $timer.text("Completed")
-    })
+    console.log($timer);
+    $timer.text("Completed")
   });
 
   const createCartItem = function (name, price, quantity) {
@@ -68,10 +63,6 @@ $(document).ready(() => {
 
   const renderCart = function (cartItems) {
     const container = $(".nav-popup ul");
-    // const totalPriceElement = $(".nav-popup .shopping-cart .shopping-cart-header .shopping-cart-total .total-price ");
-    // if (totalPriceElement !== undefined) {
-    //   totalPriceElement.remove()
-    // }
     let totalPriceCart = 0;
     let totalQuantityCart = 0
     container.empty();
