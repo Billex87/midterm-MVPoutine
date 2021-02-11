@@ -40,10 +40,11 @@
             <%}%>
               <div id="countdown-timer" class="btn"></div>
               <div class="total-price"><%=order.totalPrice/100%></div>
+              <form method= "POST" action= "/complete">
+                <button id="btnSubmit" class="button" runat="server" Text="order-complete">Order Complete</button>
+                </form>
         </section>
       </section>
       <%}%>
-      <form method= "POST" action= "/complete">
-      <button id="btnSubmit" class="button" runat="server" Text="order-complete">Order Complete</button>
 </body>
 </html>
