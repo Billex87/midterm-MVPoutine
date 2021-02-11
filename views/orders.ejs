@@ -26,21 +26,25 @@
         <%console.log(order)%>
         <section class="order-summary">
           <!-- test  -->
-          <div class="order-header">Thank you for your order</div>
+          <div class="order-header">THANK YOU</div>
+          <div class="btn">for your order, and for supporting small businesses</div>
+
           <div class="btn">Get your poutine within 20 minutes or less.
             If we're lying, we're buying</div>
-          <div class="order-id">Your order id: <%=order.orderID%>
+          <div class="order-id"> ORDER ID
           </div>
-          <div class="btn">Currently being prepared</div>
-          <p>Your order items:</p>
+          <p>#<%=order.orderID%></p>
+          <div class="order-id"> ORDER STATUS</div>
+          <p>Order is being processed</p>
+          <p id="order-details"> ORDER DETAILS</p>
           <%for(let orderItem of order.menuItems){%>
             <div class="your-order"><%=orderItem.name%>
             </div>
             <div class="item-quantity">Quantity: <%=orderItem.quantity%>
             </div>
             <%}%>
-              <div id="countdown-timer" class="btn"></div>
-              <div class="total-price"><%=order.totalPrice/100%></div>
+            <div class="order-id"> TIME</div>
+            <div class="total-price">$<%=order.totalPrice/100%></div>
         </section>
       </section>
       <%}%>
