@@ -17,13 +17,14 @@
   position: fixed;
   height: 450px;
   width: var(--navbar-width);
-  display: block;// IDIL STYLE MEEEEEE
+  // display: block;// IDIL STYLE MEEEEEE
   z-index: 1000;
   bottom: 0;
   div{
-    background-color: rgb(229, 165, 61);
+    background-color:black;
+    color:white;
+    font-family: 'Spartan', sans-serif;
 
-    color: black;
     // display: block;
     // overflow-y: auto;
     width: 100%;
@@ -35,7 +36,7 @@
   }
 }
 .nav-popup li{
-  color: black;
+  color: white;
 
 }
 
@@ -121,4 +122,57 @@ font-family: spartan;
 
 }
 
+// checkout button
+#btnSubmit{
+  justify-content: space-around;
+  margin-left: 6.5rem;
+  cursor: pointer;
+  color:rgb(229, 165, 61);
+  background-color: black;
+  border-radius: 15px;
+  font-family: 'Caveat', cursive;
 
+
+
+   // background-color: #black;
+  // border: 3px solid #000000;
+  // box-shadow: 10px 10px grey;
+  // box-shadow: 0 0 3px #fff, 0 0 10px #fff, 0 0 15px #cf9b00, 0 0 20px #cf9b00,
+  //   0 0 25px #cf9b00, 0 0 30px #cf9b00, 0 0 35px #cf9b00;
+
+}
+#btnSubmit:active{
+  // border: black 3px solid;
+  background-color: rgb(229, 165, 61);
+
+
+}
+#btnSubmit:hover {
+  color: white;
+}
+
+#btnSubmit:hover {
+  transform: translateY(0) scale(1.2);
+}
+
+#cart-items{
+font-family: 'Spartan', sans-serif;
+}
+
+.shopping-cart-header{
+margin-top: 18px
+}
+
+
+.lighter-text{
+  margin-left: 5.5rem;
+}
+
+.fas {
+  color:  rgb(229, 165, 61);
+  margin-right: 5px;
+  margin-left: 5.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+}
