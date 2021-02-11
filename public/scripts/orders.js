@@ -59,6 +59,9 @@ module.exports = (db) => {
   router.post("/:id", (req, res) => {
     console.log(req.params.id);
   })
+
+
+
   router.post("/complete", (req, res) => {
     console.log("LOOK");
     twilio.smsReady()

@@ -100,6 +100,38 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
+  router.get("/complete", (req, res) => {
+    db.query(`SELECT *
+    FROM orders
+    JOIN order_items ON orders.id =  orders_id
+    JOIN menu ON menu.id = menu_id
+    WHERE user_id = 1
+    ORDER BY orders.id DESC
+    ;`)
+      .then(data => {
+        const orders = data.rows;
+        let parsedData = {};
+        for (let item of orders) {
+          if (!parsedData[item.orders_id]) {
+            parsedData[item.orders_id] = []
+          }
+          parsedData[item.orders_id].push(item)
+        }
+        const orderedData = Object.keys(parsedData).sort(function(a, b) {
+          return Number(a) - Number(b);
+        }).reverse().map((orderID) => {
+            const menuItems = parsedData[orderID]
+            return {orderID , menuItems, totalPrice: getTotalPrice(menuItems) }
+        }
+        )
+        res.render('restaurant', {orders: orderedData});
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+  });
   router.post("/complete", (req, res) => {
     console.log("COMPLETE ROUTE");
     twilio.smsReady()
