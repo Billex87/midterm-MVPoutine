@@ -9,4 +9,4 @@ VALUES
 ('Pogo', 'Fresh hand-cut french fries, cheese curd, signature gravy, chopped pogo. 1190 CAL', 1200, '/images/pogo-thumb.png'),
 ('Veggie Rainbow Poutine', 'Fresh hand-cut french fries, veggie gravy, cheese curds, sriracha, guacamole. 1000 CAL', 1300, '/images/Rainbow-Poutine.png'),
 ('Bacon CheeseBurger', 'Double-smoked bacon, prime ground beef, cheese sauce. 1400 CAL', 1400, '/images/Bacon-Cheeseburger-Poutine.png'),
-('Pulled Pork', 'Fresh hand-cut french fries, chipotle pulled pork 1360 CAL', 1400, '/images/Pulled-Pork-Poutine.png');
+('The Git Out Of Here', '⚠️WARNING: PLEASE CONSULT WITH A MENTOR BEFORE ORDERING⚠️  Fresh hand-cut merge conflicts, many branches, confusion with a side of anger, plenty of fingers to point and bugs. Lots of bugs.', 1150000, '/images/Pulled-Pork-Poutine.png');

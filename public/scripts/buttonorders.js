@@ -50,6 +50,13 @@ $(document).ready(() => {
   $('#orderCompleteButton').click(function (event) {
     const $timer = $(event.currentTarget).siblings('#countdown-timer');
     $timer.attr('data-status', "Done");
+    $.ajax({
+      method: "POST",
+      url: "/api/orders/complete"
+    }).then(() => {
+      // window.location.href = "http://localhost:8080/api/orders"
+      $timer.text("Completed")
+    })
     console.log($timer);
     $timer.text("Completed");
     $('#orderCompleteButton').hide();
@@ -110,6 +117,5 @@ $(document).ready(() => {
       $(".shopping-cart").hide()
     }
   }
-
 
 });
