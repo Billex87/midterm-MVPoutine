@@ -14,7 +14,6 @@ $(document).ready(() => {
     console.log('cartArr', cartArr);
 
   });
-  //from the navbar
   $('.nav-popup button').click(function(event) {
     console.log('RUNNING')
     event.preventDefault();
@@ -26,14 +25,6 @@ $(document).ready(() => {
     })
     .catch(error => {console.log("ERROR", error)});
   });
-//  function clickFunction (event) {
-//   event.PreventDefault();
-//   $.ajax({
-//     type: "POST",
-//     url: "/api/orders",
-//     data: "{‘cities’:['dhk','ctg']}",
-//   });
-//  }
   let cartArr = [];
   const checkItemQuantity = function (newItem) {
     let flag = false;
@@ -97,7 +88,5 @@ $(document).ready(() => {
     totalPriceElementContainer.html((totalPriceCart));
     const totalQuantityElementContainer = $(".nav-popup .shopping-cart .shopping-cart-header .total-quantity");
     totalQuantityElementContainer.html((totalQuantityCart));
-    // console.log(totalPriceCart);
   };
 });
-

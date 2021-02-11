@@ -18,47 +18,31 @@
     rel="stylesheet">
 
 </head>
-
-
 <body>
   <script type="text/javascript" src="/scripts/timer.js"></script>
-
-
   <%- include('partials/_navbar') %>
-
-
-
-    <%for(let item in orders){%>
+    <%for(let order of orders){%>
       <section id="order">
-
+        <%console.log(order)%>
         <section class="order-summary">
           <!-- test  -->
           <div class="order-header">Thank you for your order</div>
           <div class="btn">Get your poutine within 20 minutes or less.
             If we're lying, we're buying</div>
-          <div class="order-id">Here is your order id: <%=item%>
+          <div class="order-id">Your order id: <%=order.orderID%>
           </div>
           <div class="btn">Currently being prepared</div>
-          <%for(let orderItem in orders[item]){%>
-            <div class="your-order">Here is your order: <%=orders[item][orderItem].name%>
+          <p>Your order items:</p>
+          <%for(let orderItem of order.menuItems){%>
+            <div class="your-order"><%=orderItem.name%>
             </div>
-            <div class="item-quantity">Quantity: <%=orders[item][orderItem].quantity%>
+            <div class="item-quantity">Quantity: <%=orderItem.quantity%>
             </div>
-            <div id="countdown-timer" class="btn"></div>
             <%}%>
-              <div class="btn">$ <%=orders[item][0].total_price%>
-              </div>
-              <!-- <button id="orderCompleteButton">Order Complete</button> -->
+              <div id="countdown-timer" class="btn"></div>
+              <div class="total-price"><%=order.totalPrice/100%></div>
         </section>
       </section>
       <%}%>
-
-
-
 </body>
-
 </html>
-
-<!-- //add a UL outside of the for loop and loop over each order and create an li -->
-<!-- //display it vertically and make sure the newest is at the top -->
-<!-- //why have one section nested right into the other section here? -->
