@@ -14,7 +14,6 @@ $(document).ready(() => {
     console.log('cartArr', cartArr);
 
   });
-  //from the navbar
   $('.nav-popup button').click(function(event) {
     console.log('RUNNING')
     event.preventDefault();
@@ -26,14 +25,6 @@ $(document).ready(() => {
     })
     .catch(error => {console.log("ERROR", error)});
   });
-//  function clickFunction (event) {
-//   event.PreventDefault();
-//   $.ajax({
-//     type: "POST",
-//     url: "/api/orders",
-//     data: "{‘cities’:['dhk','ctg']}",
-//   });
-//  }
   let cartArr = [];
   const checkItemQuantity = function (newItem) {
     let flag = false;
@@ -58,13 +49,8 @@ $(document).ready(() => {
   $('#orderCompleteButton').click(function (event) {
     const $timer = $(event.currentTarget).siblings('#countdown-timer')
     $timer.attr('data-status', "Done");
-    $.ajax({
-      method: "POST",
-      url: "/api/orders/complete"
-    }).then(() => {
-      // window.location.href = "http://localhost:8080/api/orders"
-      $timer.text("Completed")
-    })
+    console.log($timer);
+    $timer.text("Completed")
   });
 
   const createCartItem = function (name, price, quantity) {
@@ -77,10 +63,6 @@ $(document).ready(() => {
 
   const renderCart = function (cartItems) {
     const container = $(".nav-popup ul");
-    // const totalPriceElement = $(".nav-popup .shopping-cart .shopping-cart-header .shopping-cart-total .total-price ");
-    // if (totalPriceElement !== undefined) {
-    //   totalPriceElement.remove()
-    // }
     let totalPriceCart = 0;
     let totalQuantityCart = 0
     container.empty();
@@ -97,7 +79,5 @@ $(document).ready(() => {
     totalPriceElementContainer.html((totalPriceCart));
     const totalQuantityElementContainer = $(".nav-popup .shopping-cart .shopping-cart-header .total-quantity");
     totalQuantityElementContainer.html((totalQuantityCart));
-    // console.log(totalPriceCart);
   };
 });
-

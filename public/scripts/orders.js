@@ -107,14 +107,6 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
-  router.post("/complete", (req, res) => {
-    console.log("COMPLETE ROUTE");
-    twilio.smsReady()
-    res.redirect('/')
-  })
   router.post("/:id", (req, res) => {
     console.log(req.params.id);
   })
-  return router;
-};
-

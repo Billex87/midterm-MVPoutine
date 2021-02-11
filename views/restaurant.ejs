@@ -1,45 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Home Page</title>
 
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
-    <script type="text/javascript" src="/scripts/buttonorders.js"></script>
+<head>
+  <title>Home Page</title>
 
-    <!-- Fonts  -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
+  <script type="text/javascript" src="/scripts/buttonorders.js"></script>
 
-  </head>
+  <!-- Fonts  -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100;600&display=swap"
+    rel="stylesheet">
 
+</head>
+<body>
+  <script type="text/javascript" src="/scripts/timer.js"></script>
+  <%- include('partials/_navbar') %>
+    <%for(let order of orders){%>
+      <section id="order">
+        <%console.log(order)%>
+        <section class="order-summary">
+          <!-- test  -->
+          <div class="order-header">Order In</div>
 
-  <body>
-    <script type="text/javascript" src="/scripts/timer.js"></script>
+          <div class="order-id">The Order ID: <%=order.orderID%>
+          </div>
+          <div class="btn">We Have An Order To Prepare</div>
+          <p>Order Items:
+          <%for(let orderItem of order.menuItems){%></p>
+            <div class="your-order"><%=orderItem.name%>
+            </div>
+            <div class="item-quantity">Quantity: <%=orderItem.quantity%>
+            </div>
+            <%}%>
+              <div id="countdown-timer" class="btn"></div>
+              <div class="total-price">$<%=order.totalPrice/100%></div>
 
+                <button id="orderCompleteButton" class="button" runat="server" Text="order-complete">Order Complete</button>
 
-    <%- include('partials/_navbar') %>
-
-
-    <section id="order">
-      <%for(let item of orders){%>
-
-             <section class="order-summary">
-                  <!-- test  -->
-                  <div class="order-header">New order</div>
-                  <div class="btn">Order #id</div>
-                  <div class="btn"><%=item.order_status%></div>
-                  <div id="countdown-timer" class="btn"> </div>
-                  <div class="btn">$ <%=item.total_price%> </div>
-                  <button id="orderCompleteButton">Order Complete</button>
-               </section>
-
-        <%}%>
+        </section>
       </section>
-
-  </body>
+      <%}%>
+</body>
 </html>
