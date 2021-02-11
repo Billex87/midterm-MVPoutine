@@ -14,8 +14,10 @@
 
   <!-- Fonts  -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100;600&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100;600&family=Caveat&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Spartan:wght@100&display=swap" rel="stylesheet">
+
 
 </head>
 <body>
@@ -26,19 +28,27 @@
         <%console.log(order)%>
         <section class="order-summary">
           <!-- test  -->
-          <div class="order-header">Order In</div>
+          <div class="order-header">ORDERS</div>
 
-          <div class="order-id">The Order ID: <%=order.orderID%>
+          <div class="order-id"> ORDER ID
           </div>
-          <div class="btn">We Have An Order To Prepare</div>
-          <p>Order Items:
+          <p class="details">#<%=order.orderID%></p>
+
+            <div class="order-id"> ORDER STATUS</div>
+            <p class="details">New order ready for preperation</p>
+            <p id="order-details"> ORDER DETAILS</p>
+
           <%for(let orderItem of order.menuItems){%></p>
-            <div class="your-order"><%=orderItem.name%>
+            <div class="details"><%=orderItem.name%>
             </div>
-            <div class="item-quantity">Quantity: <%=orderItem.quantity%>
+            <div class="order-id">QNTY:
             </div>
+            <p class="details"><%=orderItem.quantity%></p>
             <%}%>
+            <div class="order-id"> TIME</div>
               <div id="countdown-timer" class="btn"></div>
+
+              <div class="order-id"> TOTAL PRICE</div>
               <div class="total-price">$<%=order.totalPrice/100%></div>
 
                 <button id="orderCompleteButton" class="button" runat="server" Text="order-complete">Order Complete</button>

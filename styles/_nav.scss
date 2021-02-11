@@ -17,14 +17,12 @@
   position: fixed;
   height: 450px;
   width: var(--navbar-width);
-  // display: block;// IDIL STYLE MEEEEEE
   z-index: 1000;
   bottom: 0;
   div{
-    background-color:black;
+    background-color:#1e1c1c;
     color:white;
     font-family: 'Spartan', sans-serif;
-
     // display: block;
     // overflow-y: auto;
     width: 100%;
@@ -128,19 +126,12 @@ font-family: spartan;
 #btnSubmit{
   justify-content: space-around;
   margin-left: 6.5rem;
+  margin-bottom: 1rem;
   cursor: pointer;
   color:rgb(229, 165, 61);
   background-color: black;
   border-radius: 15px;
   font-family: 'Caveat', cursive;
-
-
-
-   // background-color: #black;
-  // border: 3px solid #000000;
-  // box-shadow: 10px 10px grey;
-  // box-shadow: 0 0 3px #fff, 0 0 10px #fff, 0 0 15px #cf9b00, 0 0 20px #cf9b00,
-  //   0 0 25px #cf9b00, 0 0 30px #cf9b00, 0 0 35px #cf9b00;
 
 }
 #btnSubmit:active{
@@ -166,15 +157,23 @@ margin-top: 18px
 }
 
 
+
 .lighter-text{
   margin-left: 5.5rem;
 }
 
 .fas {
-  color:  rgb(229, 165, 61);
+  color:white;
   margin-right: 5px;
   margin-left: 5.5rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
 
 }
+
+.removeItemButton{
+  font-size: 12px;
+  background-color: transparent;
+  border: white;
+}
+
