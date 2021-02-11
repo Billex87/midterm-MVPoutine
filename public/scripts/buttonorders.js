@@ -74,7 +74,7 @@ $(document).ready(() => {
       <li>${item.name}</li>
    <li>Price: ${item.price}</li>
    <li>Quantity: ${item.quantity}</li>
-   <button class="removeItemButton" value="X" data-id="${item.id}">X</button>
+   <button class="removeItemButton" value="X" data-id="${item.id}">&#10060;</button>
    </div>
     `);
       container.append($cart);
