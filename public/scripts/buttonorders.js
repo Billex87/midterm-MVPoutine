@@ -11,9 +11,7 @@ $(document).ready(() => {
     console.log('price2', priceTwo);
     checkItemQuantity({ name: p.html(), price: Number(priceTwo), quantity: 1, id: button.data('id') });
     $('#poppin').removeClass('hidden-popup');
-
     console.log('cartArr', cartArr);
-
   });
   $('.nav-popup button').click(function (event) {
     console.log('RUNNING');
@@ -31,7 +29,6 @@ $(document).ready(() => {
     let flag = false;
     for (let item of cartArr) {
       console.log('forItem', item);
-
       if (item.name === newItem.name) {
         item.quantity = item.quantity + 1;
         console.log('matched item', newItem); flag = true;
@@ -46,7 +43,6 @@ $(document).ready(() => {
     }
     renderCart(cartArr);
   };
-
   $('#orderCompleteButton').click(function (event) {
     const $timer = $(event.currentTarget).siblings('#countdown-timer');
     $timer.attr('data-status', "Done");
@@ -61,7 +57,6 @@ $(document).ready(() => {
     $timer.text("Completed");
     $('#orderCompleteButton').hide();
   });
-
   const createCartItem = function (name, price, quantity) {
     const $cart = $(`<li>${name}</li>
    <li class="popupcss">Price: ${price}</li>
@@ -69,7 +64,6 @@ $(document).ready(() => {
    `);
     return $cart;
   };
-
   const renderCart = function (cartItems) {
     const container = $(".nav-popup ul");
     let totalPriceCart = 0;
@@ -101,7 +95,6 @@ $(document).ready(() => {
       hideCart(cartArr)
     });
   };
-
   const removeItemFromCart = (cartArr, id) => {
     let newCartArr = [];
     for (let item of cartArr) {
@@ -111,12 +104,9 @@ $(document).ready(() => {
     }
     return newCartArr;
   };
-
   const hideCart = (cartArr) => {
     if (cartArr.length === 0) {
       $(".shopping-cart").hide()
     }
   }
-
-
 });
