@@ -133,7 +133,7 @@ module.exports = (db) => {
       });
   });
   router.post("/complete", (req, res) => {
-    // console.log("COMPLETE ROUTE");
+    console.log("COMPLETE ROUTE");
     twilio.smsReady()
   })
   router.post("/:id", (req, res) => {
