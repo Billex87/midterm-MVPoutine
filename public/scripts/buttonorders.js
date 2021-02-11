@@ -71,9 +71,9 @@ $(document).ready(() => {
     container.empty();
     for (let item of cartItems) {
       const $cart = $(`<div>
-      <li>${item.name}</li>
-   <li>Price: ${item.price}</li>
-   <li>Quantity: ${item.quantity}</li>
+      <li class="foodDetails">Item:${item.name}</li>
+   <li class="foodDetails">Price: ${item.price}</li>
+   <li class="foodDetails">Quantity: ${item.quantity}</li>
    <button class="removeItemButton" value="X" data-id="${item.id}">&#10060;</button>
    </div>
     `);
