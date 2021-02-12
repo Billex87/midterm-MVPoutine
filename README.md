@@ -45,7 +45,7 @@ Midterm With @billex87, @idiljei and @samjanderson Displaying our amazing new de
 
 
 ![ScreenShot Of Main Page](https://github.com/Billex87/midterm-resource-wall/blob/main/public/images/main.png)
-![ScreenShot Of Client Order](https://github.com/Billex87/midterm-resource-wall/blob/main/public/images/clientorder.png)
 ![ScreenShot Of Cart](https://github.com/Billex87/midterm-resource-wall/blob/main/public/images/cart.png)
+![ScreenShot Of Client Order](https://github.com/Billex87/midterm-resource-wall/blob/main/public/images/clientorder.png)
 ![ScreenShot Of Client Order](https://github.com/Billex87/midterm-resource-wall/blob/main/public/images/restaurantview.png)
 ![ScreenShot Of Text Messages](https://github.com/Billex87/midterm-resource-wall/blob/main/public/images/texts.png)
