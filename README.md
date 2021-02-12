@@ -39,15 +39,10 @@ The following steps are only for _one_ of the group members to perform.
 - Node 10.x or above
 - NPM 5.x or above
 - PG 6.x
-<<<<<<< HEAD
+
 # midterm-food
 Midterm With @billex87, @idiljei and @samjanderson Displaying our amazing new dev skills
-=======
-=======
->>>>>>> sam-branch
 
-# midterm-resource-wall
-Midterm With @idil and @sam_anderson Displaying our amazing new dev skills
-Change.
 
+![ScreenShot Of Main Page](https://github.com/Billex87/midterm-resource-wall/blob/main/public/images/main.png)
 
