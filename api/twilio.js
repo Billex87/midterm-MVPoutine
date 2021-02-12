@@ -3,7 +3,7 @@ const authToken  = '50b6c9f8bd27368b513fe4d8ee036755';  //process.env.TWILIO_AUT
 const client     = require('twilio')(accountSid, authToken);
 // POST REQUEST
 const smsOrderIn = (orderID, totalPrice) => {
-  const message = `Your Order # Is: ${orderID} Your Total Is: $${totalPrice}. `
+  const message = `Your Order # Is: ${orderID} Your Total Is: $${totalPrice}. Friendly Reminder We Are CASH ONLY Upon Pick-Up`
   client.messages.create({
     from: "+18016093070", //twilio
     to: "+17782146187",  //customer
