@@ -1,7 +1,7 @@
 
 ## Project Setup
 
-The following steps are only for _one_ of the group members to perform.
+To Clone Our Template
 
 1. Create your own copy of this repo using the `Use This Template` button, ideally using the name of your project. The repo should be marked Public
 2. Verify that the skeleton code now shows up in your repo on GitHub, you should be automatically redirected
@@ -45,4 +45,7 @@ Midterm With @billex87, @idiljei and @samjanderson Displaying our amazing new de
 
 
 ![ScreenShot Of Main Page](https://github.com/Billex87/midterm-resource-wall/blob/main/public/images/main.png)
-
+![ScreenShot Of Client Order](https://github.com/Billex87/midterm-resource-wall/blob/main/public/images/clientorder.png)
+![ScreenShot Of Cart](https://github.com/Billex87/midterm-resource-wall/blob/main/public/images/cart.png)
+![ScreenShot Of Client Order](https://github.com/Billex87/midterm-resource-wall/blob/main/public/images/restaurantview.png)
+![ScreenShot Of Text Messages](https://github.com/Billex87/midterm-resource-wall/blob/main/public/images/texts.png)
