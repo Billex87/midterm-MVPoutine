@@ -42,7 +42,8 @@ To Clone Our Template
 
 # midterm-food
 Midterm With @billex87, @idiljei and @samjanderson Displaying our amazing new dev skills
-
+Link to our presentation:
+https://drive.google.com/file/d/1qWMjCsRZwXaTALJ5yBUboVkRxfWnzTB-/view?usp=sharing
 
 ![ScreenShot Of Main Page](https://github.com/Billex87/midterm-resource-wall/blob/main/public/images/main.png)
 ![ScreenShot Of Cart](https://github.com/Billex87/midterm-resource-wall/blob/main/public/images/cart.png)
